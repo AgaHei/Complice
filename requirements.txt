@@ -1,0 +1,6 @@
+pymupdf
+sentence-transformers
+faiss-cpu
+tqdm
+python-dotenv
+openai>=1.40.0
