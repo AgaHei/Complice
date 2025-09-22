@@ -35,6 +35,11 @@ L’objectif est de proposer un outil accessible, rassurant et éducatif pour le
         │   ├── ready_for_embedding/  # chunks, chunks avec metadonnées    
         │   └── embeddings/         # fichiers .npy, .pkl, .idx
         ├── notebooks/             # Notebooks 01 à 05 (pipeline RAG)
+        │   ├── 01_extraction.ipynb # extraction des textes
+        │   ├── 02_chunking_metadata.ipynb # découpage + annotation
+        │   ├── 03_embeddings.ipynb # génération des vecteurs
+        │   ├── 04_indexation_faiss.ipynb # création du vectorstore (.faiss + .pkl)   
+        │   └── 05_rag_pipeline.ipynb # requêtes RAG avec GPT-4o
         ├── .venv/                 # Environnement virtuel local (non versionné)
         ├── .env                   # Clé API OpenAI (non versionné)
         ├── .gitignore             # Fichier d’exclusion Git
