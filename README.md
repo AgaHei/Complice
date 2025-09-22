@@ -1,5 +1,7 @@
 # 🤖 COMPLICE Assistant Multimodal Bienveillant pour Jeunes Autistes
 
+Complice — Un compagnon pour comprendre, ressentir et prendre confiance
+
 ## 🧠 Objectif du projet
 
 Ce projet vise à créer un assistant conversationnel intelligent, combinant :
@@ -26,27 +28,36 @@ L’objectif est de proposer un outil accessible, rassurant et éducatif pour le
 
 ## 🗂️ Structure du projet
 
-    📁 complice-assistant-autisme/ 
-    ├── data/ # Textes extraits et annotés 
-    ├── notebooks/ # Exploration, chunking, embeddings 
-    ├── app/ # Backend FastAPI + frontend Streamlit 
-    ├── prompts/ # Prompts LLM et image (Replicate) 
-    ├── utils/ # Fonctions d’extraction, nettoyage, sécurité 
-    ├── README.md # Ce fichier 
-    └── requirements.txt # Dépendances Python
+    complice/
+        ├── data/                  # Textes extraits, chunks, embeddings, index FAISS
+        │   ├── pdf_books/          # (non versionné) PDF sources originaux
+        │   ├── extracted_texts/   # (optionnel) textes extraits
+        │   ├── ready_for_embedding/  # chunks, chunks avec metadonnées    
+        │   └── embeddings/         # fichiers .npy, .pkl, .idx
+        ├── notebooks/             # Notebooks 01 à 05 (pipeline RAG)
+        ├── .venv/                 # Environnement virtuel local (non versionné)
+        ├── .env                   # Clé API OpenAI (non versionné)
+        ├── .gitignore             # Fichier d’exclusion Git
+        ├── README.md              # Présentation du projet
+        └── requirements.txt       # Dépendances Python
 
 
 ---
 
 ## 🔧 Technologies utilisées
 
-- **LangChain / LlamaIndex** : Orchestration du pipeline RAG
-- **FAISS / Qdrant** : Base vectorielle pour la recherche sémantique
-- **OpenAI / Mistral API** : Génération de réponses bienveillantes
-- **Replicate API** : Génération d’images émotionnelles
-- **Streamlit / Gradio** : Interface utilisateur
+- **LangChain** : Orchestration du pipeline RAG
+- **FAISS** : Base vectorielle pour la recherche sémantique
+- **OpenAI** : Génération de réponses bienveillantes
+- **Replicate API** : Génération d’images émotionnelles (* à suivre)
+- **Streamlit / Gradio** : Interface utilisateur (* à suivre)
 - **PyMuPDF / pdfminer.six** : Extraction de texte depuis PDF
 - **sentence-transformers** : Embeddings multilingues
+- **pandas, numpy, tqdm**: Manipulation de données
+- **python-dotenv**: Gestion sécurisée des clés API
+
+
+> Pour une installation complète : `pip install -r requirements.txt`
 
 ---
 
@@ -78,18 +89,58 @@ Les textes utilisés sont des ouvrages éducatifs sur l’autisme, l’adolescen
 
 ## 🚀 Lancer le projet
 
-```bash
-# Cloner le repo
-git clone https://github.com/AgaHei/Complice.git
-cd complice
+1. Cloner le repo :
+   ```bash
+   git clone https://github.com/AgaHei/Complice.git
+   cd Complice
 
-# Installer les dépendances
+2. Créer un environnement virtuel (optionnel mais recommandé) :
+
+python -m venv complice-env
+source complice-env/bin/activate  # ou .\complice-env\Scripts\activate sur Windows
+
+3. Installer les dépendances
 pip install -r requirements.txt
 
-# Lancer l'application
+4. Ajouter ta clé API OpenAI dans un fichier .env à la racine :
+OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+5. Lancer les notebooks dans l’ordre :
+
+    01_extraction.ipynb → extraction des textes
+
+    02_chunking_metadata.ipynb → découpage + annotation
+
+    03_embeddings.ipynb → génération des vecteurs
+
+    04_indexation_faiss.ipynb → création du vectorstore (.faiss + .pkl)
+
+    05_rag_pipeline.ipynb → requêtes RAG avec GPT-4o
+
+6. Tester une requête:
+
+    rag_query("Pourquoi certaines personnes évitent le contact visuel ?")
+
+
+# Lancer l'application (*à suivre)
 streamlit run app/main.py
 
 ---
+## 🤝 Contribuer
 
-##💬 Contact
+Les coéquipiers peuvent :
+
+- Ajouter de nouveaux textes sources (PDF éducatifs, guides, etc.)
+- Proposer des améliorations aux prompts pour plus de nuance
+- Tester des variantes de modèles (GPT-3.5, GPT-4o, Mistral…)
+- Créer une interface utilisateur (Streamlit, Gradio)
+- Ajouter des filtres thématiques ou des scores de pertinence
+
+### 🧪 Bonnes pratiques
+
+- Documenter chaque étape dans les notebooks
+- Utiliser des noms de fichiers explicites et versionnés
+- Respecter la philosophie de *Complice* : bienveillance, clarté, inclusion
+- Ne jamais exposer de clé API dans le code ou les notebooks
+
 

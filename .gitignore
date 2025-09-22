@@ -1,0 +1,31 @@
+# 🔐 Sécurité
+.env
+
+# 📚 Fichiers sources volumineux
+*.pdf
+data/pdf_books/
+data/extracted_texts/
+
+# 🧠 Fichiers générés automatiquement
+__pycache__/
+*.pyc
+*.pkl
+*.npy
+*.idx
+
+# 📓 Jupyter notebooks checkpoints
+.ipynb_checkpoints/
+
+# 🧪 Environnements virtuels
+venv/
+complice-env/
+.envrc
+
+# 📦 Fichiers temporaires ou système
+.DS_Store
+Thumbs.db
+
+# 🧰 Logs et outputs
+*.log
+*.out
+*.tmp
