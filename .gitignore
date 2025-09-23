@@ -17,7 +17,7 @@ __pycache__/
 .ipynb_checkpoints/
 
 # 🧪 Environnements virtuels
-venv/
+.venv/
 complice-env/
 .envrc
 

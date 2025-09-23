@@ -31,7 +31,7 @@ L’objectif est de proposer un outil accessible, rassurant et éducatif pour le
     complice/
         ├── data/                  # Textes extraits, chunks, embeddings, index FAISS
         │   ├── pdf_books/          # (non versionné) PDF sources originaux
-        │   ├── extracted_texts/   # (optionnel) textes extraits
+        │   ├── extracted_texts/   # (non versionné) textes extraits
         │   ├── ready_for_embedding/  # chunks, chunks avec metadonnées    
         │   └── embeddings/         # fichiers .npy, .pkl, .idx
         ├── notebooks/             # Notebooks 01 à 05 (pipeline RAG)
@@ -40,8 +40,6 @@ L’objectif est de proposer un outil accessible, rassurant et éducatif pour le
         │   ├── 03_embeddings.ipynb # génération des vecteurs
         │   ├── 04_indexation_faiss.ipynb # création du vectorstore (.faiss + .pkl)   
         │   └── 05_rag_pipeline.ipynb # requêtes RAG avec GPT-4o
-        ├── .venv/                 # Environnement virtuel local (non versionné)
-        ├── .env                   # Clé API OpenAI (non versionné)
         ├── .gitignore             # Fichier d’exclusion Git
         ├── README.md              # Présentation du projet
         └── requirements.txt       # Dépendances Python
