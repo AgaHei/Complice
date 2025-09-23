@@ -9,8 +9,6 @@ data/extracted_texts/
 # 🧠 Fichiers générés automatiquement
 __pycache__/
 *.pyc
-*.pkl
-*.idx
 
 # 📓 Jupyter notebooks checkpoints
 .ipynb_checkpoints/
