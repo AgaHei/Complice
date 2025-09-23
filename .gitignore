@@ -10,7 +10,6 @@ data/extracted_texts/
 __pycache__/
 *.pyc
 *.pkl
-*.npy
 *.idx
 
 # 📓 Jupyter notebooks checkpoints
