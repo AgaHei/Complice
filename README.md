@@ -99,20 +99,26 @@ Les textes utilisés sont des ouvrages éducatifs sur l’autisme, l’adolescen
 
 2. Créer un environnement virtuel (optionnel mais recommandé) :
 
-python -m venv complice-env
-source complice-env/bin/activate  # ou .\complice-env\Scripts\activate sur Windows
+    python -m venv complice-env
+    source complice-env/bin/activate  # ou .\complice-env\Scripts\activate sur Windows
 
 3. Installer les dépendances
-pip install -r requirements.txt
+    pip install -r requirements.txt
 
 4. Ajouter ta clé API OpenAI dans un fichier .env à la racine :
-OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+    OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 5. Lancer les notebooks dans l’ordre :
 
-    01_extraction.ipynb → extraction des textes
+        * OPTIONNEL : 01_extraction.ipynb → extraction des textes (*optionnel: éxecutez si vous avez des pdfs d'origine en local dans le dossier data/pdf_books)
 
-    02_chunking_metadata.ipynb → découpage + annotation
+        * OPTIONNEL : 02_chunking_metadata.ipynb → découpage + annotation (*optionnel: éxecuter si vous avez éxecuté l'extraction du notebook 01 et vous avez à présent un dossier data/extracted_texts)
+
+        RAPPEL: ces deux dossiers ne sont pas versionnés:
+
+        │   ├── data/                  # Textes extraits, chunks, embeddings, index FAISS
+        │   ├── pdf_books/          # (non versionné) PDF sources originaux
+        │   ├── extracted_texts/   # (non versionné) textes extraits
 
     03_embeddings.ipynb → génération des vecteurs
 
