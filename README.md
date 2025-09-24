@@ -100,6 +100,7 @@ Les textes utilisés sont des ouvrages éducatifs sur l’autisme, l’adolescen
 2. Créer un environnement virtuel (optionnel mais recommandé) :
 
     python -m venv complice-env
+    
     source complice-env/bin/activate  # ou .\complice-env\Scripts\activate sur Windows
 
 3. Installer les dépendances
