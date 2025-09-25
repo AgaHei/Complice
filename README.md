@@ -45,7 +45,6 @@ L’objectif est de proposer un outil accessible, rassurant et éducatif pour le
         ├── .gitignore                   # Fichiers à exclure du suivi Git
         ├── .dockerignore               # Fichiers à exclure du conteneur Docker
         ├── Dockerfile                  # Image Docker pour environnement Jupyter
-        ├── start.sh                    # Script de lancement du conteneur Docker
         ├── requirements.txt            # Dépendances Python du projet
         └── README.md                   # Présentation et documentation du projet
 
@@ -108,33 +107,89 @@ Les textes utilisés sont des ouvrages éducatifs sur l’autisme, l’adolescen
 ---
 ## 🐳 Lancer le projet avec Docker
 
-1. Installez Docker sur votre machine.
-2. Clonez le dépôt :
-      ```bash
-   git clone https://github.com/AgaHei/Complice.git
-   cd Complice
-3. Créez un fichier .env à la racine (OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx)
-4. Lancez le conteneur :
-    bash start.sh
-5. Ouvrez JupyterLab dans votre navigateur : http://localhost:8888 Utilisez le token affiché dans le terminal pour vous connecter.
+Prérequis:
 
-📘 Les notebooks principaux :
+- Docker installé sur votre machine
+- Docker Compose (inclus avec Docker Desktop)
 
-03_embeddings.ipynb → génération des vecteurs
+Installation et lancement
 
-04_indexation_faiss.ipynb → création du vectorstore
+Clonez le dépôt :
 
-05_rag_pipeline.ipynb → requêtes RAG + validation
+    bash   git clone https://github.com/AgaHei/Complice.git
+        cd Complice
 
-📚 Extraction optionnelle : Si vous souhaitez enrichir la base documentaire avec de nouveaux PDF :
+Configurez l'environnement :
+Créez un fichier .env à la racine avec vos clés API :
 
-01_extraction.ipynb → extraction des textes
+env   OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+   # REPLICATE_API_TOKEN=your_replicate_token (optionnel, pour la génération d'images)
 
-02_chunking_metadata.ipynb → découpage + annotation
+Lancez l'environnement de développement :
+
+bash   docker-compose up --build
+
+Accédez à JupyterLab :
+
+Ouvrez votre navigateur sur : http://localhost:8888
+🎉 Pas de token requis en mode développement !
 
 
-# Lancer l'application (*à suivre)
-streamlit run app/main.py
+Arrêter l'environnement :
+
+bash   # Appuyez sur Ctrl+C dans le terminal, puis :
+   docker-compose down
+
+# 📘 Notebooks principaux
+
+Une fois JupyterLab ouvert, explorez les notebooks dans l'ordre :
+
+    - 03_embeddings.ipynb🔤 Génération des vecteurs d'embedding
+    - 04_indexation_faiss.ipynb🗃️ Création du vectorstore FAISS
+    - 05_rag_pipeline.ipynb🤖 Pipeline RAG
+
+📚 Enrichissement de la base documentaire (optionnel)
+
+Pour ajouter de nouveaux documents PDF à la base de connaissances :
+    - 01_extraction.ipynb📄 Extraction de texte depuis les PDF
+    - 02_chunking_metadata.ipynb✂️ Découpage et annotation des documents
+
+🛠️ Commandes utiles
+bash# Reconstruire après modification du Dockerfile/requirements
+
+docker-compose up --build --force-recreate
+
+# Lancer en arrière-plan
+docker-compose up -d
+
+# Voir les logs
+docker-compose logs -f
+
+# Accéder au shell du conteneur (debug)
+docker-compose exec jupyter-dev bash
+
+# Installer un nouveau package temporairement
+docker-compose exec jupyter-dev pip install nom-du-package
+
+# 🚀 Interface Streamlit (à venir)
+L'interface utilisateur sera accessible sur http://localhost:8501 une fois développée.
+
+🐛 Problèmes courants
+Docker n'arrive pas à se connecter ?
+
+Vérifiez que Docker Desktop est lancé
+Sur Windows : redémarrez Docker Desktop
+
+Erreur de permissions ?
+
+bash# Sur Linux/Mac, ajoutez votre utilisateur au groupe docker :
+sudo usermod -aG docker $USER
+Puis redémarrez votre session
+
+Port 8888 déjà utilisé ?
+bash# Modifiez le port dans docker-compose.yml :
+ports:
+  - "8889:8888"  # Utilisez 8889 à la place
 
 ---
 ## 🤝 Contribuer
