@@ -39,7 +39,8 @@ L’objectif est de proposer un outil accessible, rassurant et éducatif pour le
         │   ├── 02_chunking_metadata.ipynb # découpage + annotation
         │   ├── 03_embeddings.ipynb # génération des vecteurs
         │   ├── 04_indexation_faiss.ipynb # création du vectorstore (.faiss + .pkl)   
-        │   └── 05_rag_pipeline.ipynb # requêtes RAG avec GPT-4o
+        │   ├── 05_rag_pipeline.ipynb # requêtes RAG avec GPT-4o
+        │   └── 06_validation_rag.ipynb # boucle de questions test et évaluation RAGAS
         ├── .gitignore             # Fichier d’exclusion Git
         ├── README.md              # Présentation du projet
         └── requirements.txt       # Dépendances Python
@@ -100,7 +101,7 @@ Les textes utilisés sont des ouvrages éducatifs sur l’autisme, l’adolescen
 2. Créer un environnement virtuel (optionnel mais recommandé) :
 
     python -m venv complice-env
-    
+
     source complice-env/bin/activate  # ou .\complice-env\Scripts\activate sur Windows
 
 3. Installer les dépendances
@@ -126,6 +127,8 @@ Les textes utilisés sont des ouvrages éducatifs sur l’autisme, l’adolescen
     04_indexation_faiss.ipynb → création du vectorstore (.faiss + .pkl)
 
     05_rag_pipeline.ipynb → requêtes RAG avec GPT-4o
+
+    06_validation_rag.ipynb → boucle de test et évaluation RAGAS
 
 6. Tester une requête:
 
