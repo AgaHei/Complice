@@ -41,27 +41,43 @@ L’objectif est de proposer un outil accessible, rassurant et éducatif pour le
         │   ├── 04_indexation_faiss.ipynb # création du vectorstore (.faiss + .pkl)   
         │   ├── 05_rag_pipeline.ipynb # requêtes RAG avec GPT-4o
         │   └── 06_validation_rag.ipynb # boucle de questions test et évaluation RAGAS
-        ├── .gitignore             # Fichier d’exclusion Git
-        ├── README.md              # Présentation du projet
-        └── requirements.txt       # Dépendances Python
+        │
+        ├── .gitignore                   # Fichiers à exclure du suivi Git
+        ├── .dockerignore               # Fichiers à exclure du conteneur Docker
+        ├── Dockerfile                  # Image Docker pour environnement Jupyter
+        ├── start.sh                    # Script de lancement du conteneur Docker
+        ├── requirements.txt            # Dépendances Python du projet
+        └── README.md                   # Présentation et documentation du projet
 
 
 ---
 
-## 🔧 Technologies utilisées
+### 🔧 Technologies utilisées
 
-- **LangChain** : Orchestration du pipeline RAG
-- **FAISS** : Base vectorielle pour la recherche sémantique
-- **OpenAI** : Génération de réponses bienveillantes
-- **Replicate API** : Génération d’images émotionnelles (* à suivre)
-- **Streamlit / Gradio** : Interface utilisateur (* à suivre)
-- **PyMuPDF / pdfminer.six** : Extraction de texte depuis PDF
-- **sentence-transformers** : Embeddings multilingues
-- **pandas, numpy, tqdm**: Manipulation de données
-- **python-dotenv**: Gestion sécurisée des clés API
+#### 📚 Extraction & préparation des données
+- PyMuPDF, pdfminer.six : extraction de texte depuis PDF
+- pandas, numpy, tqdm : manipulation et nettoyage des données
 
+#### 🧠 Recherche sémantique & génération
+- LangChain : orchestration du pipeline RAG
+- FAISS : base vectorielle pour la recherche
+- sentence-transformers : embeddings multilingues
+- OpenAI API : génération de réponses bienveillantes
 
-> Pour une installation complète : `pip install -r requirements.txt`
+#### 🧪 Validation & évaluation
+- RAGAS : évaluation de la pertinence, fidélité et bienveillance des réponses
+
+#### 💻 Interface & expérience utilisateur
+- Jupyter Notebook : environnement de développement
+- Streamlit / Gradio (*à suivre) : interface utilisateur interactive
+
+#### 🐳 Déploiement & portabilité
+- Docker : conteneurisation pour faciliter l’installation
+- python-dotenv : gestion sécurisée des clés API
+
+#### 🤝 Collaboration & versioning
+- Git / GitHub : gestion du code en équipe
+
 
 ---
 
@@ -90,49 +106,31 @@ Les textes utilisés sont des ouvrages éducatifs sur l’autisme, l’adolescen
 | Semaine 4 | Finalisation + documentation + soutenance |
 
 ---
+## 🐳 Lancer le projet avec Docker
 
-## 🚀 Lancer le projet
-
-1. Cloner le repo :
-   ```bash
+1. Installez Docker sur votre machine.
+2. Clonez le dépôt :
+      ```bash
    git clone https://github.com/AgaHei/Complice.git
    cd Complice
+3. Créez un fichier .env à la racine (OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx)
+4. Lancez le conteneur :
+    bash start.sh
+5. Ouvrez JupyterLab dans votre navigateur : http://localhost:8888 Utilisez le token affiché dans le terminal pour vous connecter.
 
-2. Créer un environnement virtuel (optionnel mais recommandé) :
+📘 Les notebooks principaux :
 
-    python -m venv complice-env
+03_embeddings.ipynb → génération des vecteurs
 
-    source complice-env/bin/activate  # ou .\complice-env\Scripts\activate sur Windows
+04_indexation_faiss.ipynb → création du vectorstore
 
-3. Installer les dépendances
-    pip install -r requirements.txt
+05_rag_pipeline.ipynb → requêtes RAG + validation
 
-4. Ajouter ta clé API OpenAI dans un fichier .env à la racine :
-    OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+📚 Extraction optionnelle : Si vous souhaitez enrichir la base documentaire avec de nouveaux PDF :
 
-5. Lancer les notebooks dans l’ordre :
+01_extraction.ipynb → extraction des textes
 
-        * OPTIONNEL : 01_extraction.ipynb → extraction des textes (*optionnel: éxecutez si vous avez des pdfs d'origine en local dans le dossier data/pdf_books)
-
-        * OPTIONNEL : 02_chunking_metadata.ipynb → découpage + annotation (*optionnel: éxecuter si vous avez éxecuté l'extraction du notebook 01 et vous avez à présent un dossier data/extracted_texts)
-
-        RAPPEL: ces deux dossiers ne sont pas versionnés:
-
-        │   ├── data/                  # Textes extraits, chunks, embeddings, index FAISS
-        │   ├── pdf_books/          # (non versionné) PDF sources originaux
-        │   ├── extracted_texts/   # (non versionné) textes extraits
-
-    03_embeddings.ipynb → génération des vecteurs
-
-    04_indexation_faiss.ipynb → création du vectorstore (.faiss + .pkl)
-
-    05_rag_pipeline.ipynb → requêtes RAG avec GPT-4o
-
-    06_validation_rag.ipynb → boucle de test et évaluation RAGAS
-
-6. Tester une requête:
-
-    rag_query("Pourquoi certaines personnes évitent le contact visuel ?")
+02_chunking_metadata.ipynb → découpage + annotation
 
 
 # Lancer l'application (*à suivre)

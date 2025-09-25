@@ -1,0 +1,9 @@
+# Dossiers non nécessaires pour exécuter les notebooks
+data/pdf_books/
+data/extracted_texts/
+
+# Fichiers sensibles ou locaux
+.env
+.venv/
+__pycache__/
+*.pyc
