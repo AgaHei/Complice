@@ -112,33 +112,35 @@ Prérequis:
 - Docker installé sur votre machine
 - Docker Compose (inclus avec Docker Desktop)
 
-Installation et lancement
+# Installation et lancement
 
-Clonez le dépôt :
+1. Clonez le dépôt :
 
     bash   git clone https://github.com/AgaHei/Complice.git
         cd Complice
 
-Configurez l'environnement :
-Créez un fichier .env à la racine avec vos clés API :
+2. Configurez l'environnement :
 
-env   OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-   # REPLICATE_API_TOKEN=your_replicate_token (optionnel, pour la génération d'images)
+    Créez un fichier .env à la racine avec vos clés API :
 
-Lancez l'environnement de développement :
+    env     OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+            REPLICATE_API_TOKEN=your_replicate_token (optionnel, pour la génération d'images)
+
+3. Lancez l'environnement de développement :
 
 bash   docker-compose up --build
 
-Accédez à JupyterLab :
+4. Accédez à JupyterLab :
 
 Ouvrez votre navigateur sur : http://localhost:8888
+
 🎉 Pas de token requis en mode développement !
 
 
-Arrêter l'environnement :
+5. Arrêter l'environnement :
 
 bash   # Appuyez sur Ctrl+C dans le terminal, puis :
-   docker-compose down
+        docker-compose down
 
 # 📘 Notebooks principaux
 
