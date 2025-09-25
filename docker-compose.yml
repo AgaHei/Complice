@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  jupyter-dev:
+    build: .
+    container_name: complice-dev
+    ports:
+      - "8888:8888"
+    volumes:
+      # Monte ton dossier local dans le conteneur (synchronisation temps réel)
+      - .:/home/jovyan/work
+      # Persist les packages installés en cours de dev
+      - jupyter-packages:/opt/conda/lib/python3.11/site-packages
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+      - GRANT_SUDO=yes
+    # Redémarre automatiquement si le conteneur s'arrête
+    restart: unless-stopped
+    # Garde le conteneur actif même si aucun process n'est lancé
+    stdin_open: true
+    tty: true
+
+volumes:
+  jupyter-packages:
