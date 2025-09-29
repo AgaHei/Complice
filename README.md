@@ -2,16 +2,28 @@
 
 Complice — Un compagnon pour comprendre, ressentir et prendre confiance
 
-## 🧠 Objectif du projet
-
+🧠 Objectif du projet
 Ce projet vise à créer un assistant conversationnel intelligent, combinant :
-- 🔍 Recherche sémantique dans une base documentaire sur l’autisme
-- 💬 Dialogue bienveillant pour s’exercer aux habiletés sociales
-- 🖼️ Génération d’images de visages exprimant des émotions pour l’apprentissage émotionnel
+
+🔍 Recherche sémantique dans une base documentaire sur l’autisme
+💬 Dialogue bienveillant pour s’exercer aux habiletés sociales
+🖼️ Génération d’images de visages exprimant des émotions pour l’apprentissage émotionnel
 
 L’objectif est de proposer un outil accessible, rassurant et éducatif pour les jeunes autistes en quête de compréhension et d’autonomie.
 
 🧑‍🏫 Ce projet est réalisé dans le cadre de la formation Data Science Full Stack chez JEDHA comme le projet final pour la certification de "Concepteur Développeur en Science de Données".
+
+### ✅ **Fonctionnalités réalisées et opérationnelles**
+
+- 🔍 **Recherche intelligente** : RAG basé sur une bilbiothèque au sujet de l'autisme, émotions et habiletés sociales
+- 💬 **Module dialogue bienveillant** : Chat empathique avec prompts contextualisés et accueil chaleureux
+- 🌈 **Module exploration émotionnelle** : 
+  - 12 émotions avec descriptions pédagogiques
+  - Génération d'images DALL-E personnalisées (âge, lieu, moment)
+  - Sélecteur de personnage inclusif ("personne à visualiser")
+  - Discussion empathique sur les émotions ressenties
+- 🎨 **Images contextualisées** : Génération DALL-E 3 avec paramètres personnalisables
+- 🛡️ **Sécurité & éthique** : Prompts bienveillants, ton adapté aux adolescents autistesn pour comprendre, ressentir et prendre confiance
 
 ---
 
@@ -33,7 +45,7 @@ L’objectif est de proposer un outil accessible, rassurant et éducatif pour le
         │   ├── pdf_books/          # (non versionné) PDF sources originaux
         │   ├── extracted_texts/   # (non versionné) textes extraits
         │   ├── ready_for_embedding/  # chunks, chunks avec metadonnées    
-        │   └── embeddings/         # fichiers .npy, .pkl, .idx
+        │   └── embeddings/         # fichiers .npy, .pkl, .idx, vectorstore FAISS
         ├── notebooks/             # Notebooks 01 à 05 (pipeline RAG)
         │   ├── 01_extraction.ipynb # extraction des textes
         │   ├── 02_chunking_metadata.ipynb # découpage + annotation
@@ -41,6 +53,11 @@ L’objectif est de proposer un outil accessible, rassurant et éducatif pour le
         │   ├── 04_indexation_faiss.ipynb # création du vectorstore (.faiss + .pkl)   
         │   ├── 05_rag_pipeline.ipynb # requêtes RAG avec GPT-4o
         │   └── 06_validation_rag.ipynb # boucle de questions test et évaluation RAGAS
+        ├── interface/             # 🎉 Interface Streamlit fonctionnelle
+        │   ├── app.py              # Interface principale avec modules dialogue et émotion
+        │   ├── rag_module.py       # Pipeline RAG avec prompts bienveillants
+        │   ├── image_module.py     # Génération d'images DALL-E personnalisées
+        │   └── venv/               # Environnement virtuel Python configuré
         │
         ├── .gitignore                   # Fichiers à exclure du suivi Git
         ├── .dockerignore               # Fichiers à exclure du conteneur Docker
@@ -59,16 +76,18 @@ L’objectif est de proposer un outil accessible, rassurant et éducatif pour le
 
 #### 🧠 Recherche sémantique & génération
 - LangChain : orchestration du pipeline RAG
-- FAISS : base vectorielle pour la recherche
-- sentence-transformers : embeddings multilingues
-- OpenAI API : génération de réponses bienveillantes
+- FAISS : base vectorielle pour la recherche (4988 documents indexés)
+- OpenAI Embeddings : text-embedding-3-small pour vecteurs multilingues
+- OpenAI GPT-4o : génération de réponses bienveillantes avec prompts contextualisés
+- OpenAI DALL-E 3 : génération d'images émotionnelles personnalisées
 
 #### 🧪 Validation & évaluation
 - RAGAS : évaluation de la pertinence, fidélité et bienveillance des réponses
 
 #### 💻 Interface & expérience utilisateur
 - Jupyter Notebook : environnement de développement
-- Streamlit / Gradio (*à suivre) : interface utilisateur interactive
+- Streamlit : interface utilisateur interactive **opérationnelle en local**
+- Interface modulaire avec dialogue bienveillant et exploration émotionnelle
 
 #### 🐳 Déploiement & portabilité
 - Docker : conteneurisation pour faciliter l’installation
@@ -121,10 +140,10 @@ Prérequis:
 
 2. Configurez l'environnement :
 
-    Créez un fichier .env à la racine avec vos clés API :
+    Créez un fichier .env à la racine avec votre clé API OpenAI :
 
     env     OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-            REPLICATE_API_TOKEN=your_replicate_token (optionnel, pour la génération d'images)
+            # Utilisé pour GPT-4o, DALL-E 3 et les embeddings
 
 3. Lancez l'environnement de développement :
 
@@ -173,8 +192,49 @@ docker-compose exec jupyter-dev bash
 # Installer un nouveau package temporairement
 docker-compose exec jupyter-dev pip install nom-du-package
 
-# 🚀 Interface Streamlit (à venir)
-L'interface utilisateur sera accessible sur http://localhost:8501 une fois développée.
+# 🚀 Interface Streamlit (opérationnelle en local)
+
+## Lancer l'interface Complice en local
+
+1. **Navigation vers le dossier interface** :
+```bash
+cd interface
+```
+
+2. **Activation de l'environnement virtuel** :
+```bash
+# Windows
+.\venv\Scripts\activate
+
+# Linux/Mac  
+source venv/bin/activate
+```
+
+3. **Lancement de Streamlit** :
+```bash
+streamlit run app.py
+```
+
+4. **Accès à l'interface** :
+- **Local** : http://localhost:8501
+- **Réseau** : http://[votre-ip]:8501
+
+## 🎉 Fonctionnalités disponibles
+
+### 💬 Module "Discuter avec Complice"
+- Message d'accueil bienveillant
+- Chat empathique avec RAG contextuel
+- Prompts adaptés aux adolescents autistes
+
+### 🌈 Module "Explorer les émotions avec Complice"  
+- Sélection parmi 12 émotions avec descriptions
+- Paramétrage personnalisé :
+  - 🎂 Âge (5-80 ans)
+  - 📍 Lieu (école, parc, plage, etc.)
+  - 🕐 Moment (matin, midi, soir, nuit)
+  - 👦👧 Personnage inclusif
+- Génération d'images DALL-E 3 contextualisées
+- Discussion empathique sur l'émotion explorée
 
 🐛 Problèmes courants
 Docker n'arrive pas à se connecter ?
