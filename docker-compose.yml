@@ -1,11 +1,11 @@
-version: '3.8'
 
 services:
   jupyter-dev:
     build: .
     container_name: complice-dev
     ports:
-      - "8888:8888"
+      - "8888:8888"  # JupyterLab
+      - "8501:8501"  # Streamlit
     volumes:
       # Monte ton dossier local dans le conteneur (synchronisation temps réel)
       - .:/home/jovyan/work

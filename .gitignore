@@ -26,3 +26,6 @@ Thumbs.db
 *.log
 *.out
 *.tmp
+
+interface/venv/
+interface/__pycache__/
