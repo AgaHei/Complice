@@ -2,7 +2,8 @@
 
 Complice — Un compagnon pour comprendre, ressentir et prendre confiance
 
-🧠 Objectif du projet
+## 🧠 Objectif du projet
+
 Ce projet vise à créer un assistant conversationnel intelligent, combinant :
 
 🔍 Recherche sémantique dans une base documentaire sur l’autisme
@@ -13,7 +14,7 @@ L’objectif est de proposer un outil accessible, rassurant et éducatif pour le
 
 🧑‍🏫 Ce projet est réalisé dans le cadre de la formation Data Science Full Stack chez JEDHA comme le projet final pour la certification de "Concepteur Développeur en Science de Données".
 
-### ✅ **Fonctionnalités réalisées et opérationnelles**
+## ✅ **Fonctionnalités réalisées et opérationnelles**
 
 - 🔍 **Recherche intelligente** : RAG basé sur une bilbiothèque au sujet de l'autisme, émotions et habiletés sociales
 - 💬 **Module dialogue bienveillant** : Chat empathique avec prompts contextualisés et accueil chaleureux
@@ -261,7 +262,7 @@ Les coéquipiers peuvent :
 - Ajouter de nouveaux textes sources (PDF éducatifs, guides, etc.)
 - Proposer des améliorations aux prompts pour plus de nuance
 - Tester des variantes de modèles (GPT-3.5, GPT-4o, Mistral…)
-- Créer une interface utilisateur (Streamlit, Gradio)
+- Créer/Enrichir une interface utilisateur (Streamlit, Gradio)
 - Ajouter des filtres thématiques ou des scores de pertinence
 
 ### 🧪 Bonnes pratiques
