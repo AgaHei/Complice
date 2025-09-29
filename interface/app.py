@@ -1,139 +1,149 @@
-import streamlit as st
+﻿import streamlit as st
 from rag_module import query_rag
 from image_module import generate_emotion_image
 
-# Configuration de la page
-st.set_page_config(
-    page_title="Complice",
-    page_icon="🤗",
-    layout="wide"
-)
+st.set_page_config(page_title="Complice", page_icon="", layout="wide")
 
-# 🌸 Palette pastel (via CSS)
-st.markdown("""
-    <style>
-    body { background-color: #f7f5f2; }
-    .stApp { font-family: 'Quicksand', sans-serif; }
-    h1, h2, h3 { color: #4b4b4b; }
-    .block-container { padding-top: 2rem; }
-    </style>
-""", unsafe_allow_html=True)
-
-# 🤗 Barre latérale
-st.sidebar.title("🤗 Complice")
-st.sidebar.markdown("Un compagnon bienveillant pour explorer les émotions et les situations sociales.")
-module = st.sidebar.radio("Choisis une activité :", ["💬 Dialogue", "🎭 Coaching émotionnel", "🤝 Analyse sociale"])
-
-# 💬 Module 1 : Dialogue RAG
-if module == "💬 Dialogue":
-    st.header("🤗 Discuter avec Complice")
-    st.write("Pose tes questions sur l'autisme, les émotions ou les habiletés sociales.")
-    user_input = st.text_input("Ta question ici")
+def render_dialogue_module():
+    st.header("💬 Discuter avec Complice")
+    
+    # Message d'accueil chaleureux
+    st.markdown("""
+    👋 **Bonjour, je suis Complice - ton compagnon bienveillant !**
+    
+    Je suis là pour répondre à tes questions et t'aider à prendre confiance en toi. 
+    N'hésite pas à me parler de tout ce qui te préoccupe ou t'intéresse ! 🤗
+    """)
+    
+    user_input = st.text_input("🌟 Quelle question voudrais-tu me poser aujourd'hui ?")
     if user_input:
-        with st.spinner("Complice réfléchit..."):
-            response = query_rag(user_input)
+        response = query_rag(user_input, mode="dialogue")
         st.success(response)
 
-# 🎭 Module 2 : Coaching émotionnel
-elif module == "🎭 Coaching émotionnel":
-    st.header("🎭 Explorer une émotion")
-    st.write("Choisis une émotion et les paramètres de l'image à générer. Complice t'aidera à mieux comprendre cette émotion.")
-
-    # 🌿 Liste enrichie d'émotions
-    emotions_dict = {
-        "joie": "Un état de plaisir, de satisfaction ou de bonheur.",
-        "tristesse": "Une émotion liée à la perte, au manque ou à la solitude.",
-        "colère": "Une réaction à une injustice ou une frustration.",
-        "peur": "Une émotion face à un danger ou une incertitude.",
-        "calme": "Un état de sérénité et de détente.",
-        "surprise": "Une réaction à un événement inattendu.",
-        "ironie": "Une manière de dire le contraire de ce qu'on pense, souvent avec humour.",
-        "sarcasme": "Une forme d'ironie plus mordante, parfois moqueuse.",
-        "jalousie": "Une inquiétude liée à la peur de perdre l'attention ou l'amour de quelqu'un.",
-        "cynisme": "Une attitude de méfiance ou de désillusion face aux intentions des autres.",
-        "embarras": "Un malaise ressenti dans une situation sociale délicate.",
-        "condescendance": "Une attitude de supériorité déguisée en bienveillance.",
-        "nostalgie": "Un mélange doux-amer de souvenirs heureux et de regret du passé.",
-        "perplexité": "Un état de confusion ou d'hésitation face à une situation complexe.",
-        "fierté": "Une satisfaction liée à une réussite ou à une valeur personnelle.",
-        "honte": "Un malaise lié à une faute ou à une transgression perçue.",
-        "remords": "Une tristesse liée à une action que l'on regrette.",
-        "gratitude": "Une reconnaissance sincère envers quelqu'un ou quelque chose.",
-        "méfiance": "Une prudence face à une personne ou une situation incertaine.",
-        "frustration": "Une tension liée à un obstacle ou un besoin non satisfait.",
-        "solitude": "Un sentiment d'isolement, choisi ou subi.",
-        "soulagement": "Une détente après une période de stress ou d'inquiétude."
+def render_emotion_module():
+    st.header("🌈 Explorer les émotions avec Complice")
+    
+    # Dictionnaire des émotions
+    emotions = {
+        "😊 Joie": "Un sentiment de bonheur et de satisfaction",
+        "😢 Tristesse": "Un sentiment de peine ou de mélancolie",
+        "😠 Colère": "Un sentiment d'irritation ou de frustration",
+        "😨 Peur": "Un sentiment d'inquiétude ou d'anxiété",
+        "😤 Frustration": "Un sentiment d'agacement face à un obstacle",
+        "😴 Fatigue": "Un sentiment d'épuisement ou de lassitude",
+        "🤗 Affection": "Un sentiment de tendresse ou d'amour",
+        "😔 Solitude": "Un sentiment d'isolement ou de vide",
+        "😰 Stress": "Un sentiment de tension ou de pression",
+        "🤔 Confusion": "Un sentiment d'incertitude ou de perplexité",
+        "😌 Sérénité": "Un sentiment de calme et de paix",
+        "😖 Overwhelm": "Un sentiment d'être dépassé par les événements"
     }
+    
+    # Sélection de l'émotion
+    selected_emotion = st.selectbox(
+        "Quelle émotion ressens-tu en ce moment ?",
+        list(emotions.keys()),
+        index=0
+    )
+    
+    # Affichage de la description
+    if selected_emotion:
+        st.write(f"**{selected_emotion}** : {emotions[selected_emotion]}")
+    
+    # Zone de texte pour décrire l'émotion
+    emotion_description = st.text_area(
+        "Peux-tu me décrire ce que tu ressens ? (optionnel)",
+        placeholder="Décris ton émotion avec tes propres mots...",
+        height=100
+    )
+    
+    # Sélecteur de personnage avec formulation inclusive
+    personnage = st.radio(
+        "Définis la personne que tu aimerais visualiser :",
+        ["👦 Garçon / Homme", "👧 Fille / Femme"],
+        help="Cela permet à Complice de mieux adapter l'image et le ton de la réponse."
+    )
+    
+    # Paramètres supplémentaires pour personnaliser l'image
+    col1, col2, col3 = st.columns(3)
+    
+    with col1:
+        age = st.slider(
+            "🎂 Âge de la personne :",
+            min_value=5,
+            max_value=80,
+            value=15,
+            help="Choisis l'âge qui te correspond ou te ressemble"
+        )
+    
+    with col2:
+        lieu = st.selectbox(
+            "📍 Lieu :",
+            ["🏫 École", "🏠 Maison", "🌳 Parc", "🏖️ Plage", "🍽️ Restaurant", 
+             "🛍️ Magasin", "🚶 Rue", "🌲 Forêt", "🏥 Hôpital", "📚 Bibliothèque"],
+            help="Où se déroule la scène ?"
+        )
+    
+    with col3:
+        moment = st.selectbox(
+            "🕐 Moment :",
+            ["🌅 Matin", "☀️ Midi", "🌇 Soir", "🌙 Nuit"],
+            help="À quel moment de la journée ?"
+        )
+    
+    # Bouton pour générer l'image
+    if st.button("🎨 Créer une image de mon émotion", type="primary"):
+        if selected_emotion:
+            with st.spinner("Création de ton image en cours..."):
+                try:
+                    # Préparation du prompt pour l'image
+                    emotion_name = selected_emotion.split(' ', 1)[1]  # Enlever l'emoji
+                    
+                    # Génération de l'image
+                    image_url = generate_emotion_image(emotion_name, emotion_description, personnage, age, lieu, moment)
+                    
+                    if image_url:
+                        st.success("🎉 Ton image est prête !")
+                        
+                        # Affichage de l'image avec taille réduite
+                        col1, col2, col3 = st.columns([1, 1, 1])
+                        with col2:
+                            st.image(image_url, caption=f"Ton émotion : {emotion_name}", width=300)
+                        
+                        # Discussion sur l'émotion avec RAG
+                        st.subheader("💬 Parlons de ton émotion")
+                        
+                        # Construction du contexte pour la discussion
+                        context_text = f"Je ressens {emotion_name}"
+                        if emotion_description:
+                            context_text += f" : {emotion_description}"
+                        
+                        # Génération de la réponse empathique
+                        emotion_response = query_rag(context_text, mode="emotion")
+                        st.info(emotion_response)
+                        
+                        # Zone pour continuer la discussion
+                        follow_up = st.text_input(
+                            "Veux-tu en parler davantage ?",
+                            placeholder="Partage tes pensées..."
+                        )
+                        
+                        if follow_up:
+                            follow_response = query_rag(follow_up, mode="emotion")
+                            st.success(follow_response)
+                    
+                    else:
+                        st.error("❌ Impossible de générer l'image. Réessaye plus tard.")
+                        
+                except Exception as e:
+                    st.error(f"❌ Erreur lors de la génération : {str(e)}")
+        else:
+            st.warning("⚠️ Sélectionne d'abord une émotion !")
 
-    with st.form("emotion_form"):
-        emotion = st.selectbox("Émotion à explorer", list(emotions_dict.keys()))
-        sexe = st.radio("Sexe du personnage", ["masculin", "féminin"])
-        age = st.slider("Âge", min_value=5, max_value=80, value=25)  # ✅ Syntaxe corrigée
-        nombre = st.selectbox("Nombre de personnes", [1, 2])
-        environnement = st.selectbox("Environnement", ["maison", "école", "parc", "chambre", "extérieur", "restaurant"])
-        moment = st.selectbox("Moment", ["jour", "nuit", "matin", "coucher de soleil", "lumière tamisée"])
-        submitted = st.form_submit_button("Générer l'image et lancer la discussion")
+st.sidebar.title("🤗 Complice")
+module = st.sidebar.radio("Choisis une activite :", ["💬 Discuter avec Complice", "🌈 Explorer les émotions avec Complice"])
 
-    if submitted:
-        # 🧠 Affichage de la définition
-        st.subheader(f"🧠 Définition de '{emotion}'")
-        st.write(emotions_dict[emotion])
-
-        # 🖼️ Construction du prompt image
-        prompt = f"Photorealistic portrait of {nombre} person(s), {sexe} gender, age {age}, expressing the emotion '{emotion}' in a {environnement} environment, {moment} lighting, natural facial expression, high quality"
-        st.markdown(f"**Prompt généré :** _{prompt}_")
-
-        # 📸 Génération de l'image avec Replicate
-        with st.spinner("🎨 Génération de l'image en cours..."):
-            try:
-                image_url = generate_emotion_image(prompt)
-                if image_url:
-                    st.image(image_url, caption=f"Expression de l'émotion : {emotion}")
-                else:
-                    st.warning("⚠️ Impossible de générer l'image. Utilisation d'une image de remplacement.")
-                    st.image("https://via.placeholder.com/400x300.png?text=Image+émotionnelle")
-            except Exception as e:
-                st.error(f"❌ Erreur lors de la génération : {str(e)}")
-                st.image("https://via.placeholder.com/400x300.png?text=Erreur+génération")
-
-        # 💬 Commentaire bienveillant
-        st.markdown("**Complice dit :**")
-        st.info(f"Cette scène semble illustrer l'émotion **{emotion}**. Que ressens-tu en la regardant ? Veux-tu en parler ?")
-
-        # 🧩 Option de discussion
-        user_reflection = st.text_input("Exprime ce que cette image t'évoque")
-        if user_reflection:
-            st.success("Merci pour ton partage. Complice est là pour t'écouter et t'accompagner.")
-
-# 🤝 Module 3 : Analyse sociale
-elif module == "🤝 Analyse sociale":
-    st.header("🤝 Comprendre une situation sociale")
-    st.write("Crée une scène sociale et discute avec Complice.")
-
-    with st.form("social_form"):
-        interaction = st.selectbox("Type d'interaction", ["discussion", "conflit", "entraide", "demande", "refus", "invitation", "excuse", "compliment", "présentation", "remerciement", "adieu", "salutation"])
-        lieu = st.selectbox("Lieu", ["école", "maison", "rue", "salle de classe", "parc", "restaurant"])
-        moment = st.selectbox("Moment", ["jour", "nuit", "pause", "repas"])
-        nombre = st.selectbox("Nombre de personnes", [2, 3])
-        submitted_social = st.form_submit_button("Générer la scène")
-
-    if submitted_social:
-        # Construction du prompt pour Replicate
-        social_prompt = f"Photorealistic scene showing {nombre} people having a {interaction} interaction in a {lieu}, {moment} time, natural body language, realistic social setting"
-        
-        with st.spinner("🎨 Génération de la scène sociale..."):
-            try:
-                image_url = generate_emotion_image(social_prompt)
-                if image_url:
-                    st.image(image_url, caption=f"Scène : {interaction} au {lieu}")
-                else:
-                    st.image("https://via.placeholder.com/400x300.png?text=Scene+sociale")
-            except Exception as e:
-                st.error(f"❌ Erreur : {str(e)}")
-                st.image("https://via.placeholder.com/400x300.png?text=Erreur")
-        
-        # Analyse par le RAG
-        analysis_question = f"Comment gérer une situation de {interaction} dans un contexte de {lieu} ?"
-        with st.spinner("Complice analyse la situation..."):
-            analysis = query_rag(analysis_question)
-        st.info(f"**Analyse de Complice :** {analysis}")
+if module == "💬 Discuter avec Complice":
+    render_dialogue_module()
+elif module == "🌈 Explorer les émotions avec Complice":
+    render_emotion_module()

@@ -65,13 +65,32 @@ def create_rag_chain():
         print(f"❌ Erreur lors de la création du RAG: {e}")
         raise
 
-# 💬 Fonction d'interrogation
-def query_rag(question: str) -> str:
-    """Interroge le système RAG avec une question"""
+# 💬 Fonction d'interrogation avec prompts bienveillants
+def query_rag(question: str, mode: str = "dialogue") -> str:
+    """Interroge le système RAG avec une question et un prompt système bienveillant"""
     try:
         qa_chain = create_rag_chain()
-        response = qa_chain.invoke({"query": question})
+
+        # 🎯 Prompt système bienveillant
+        if mode == "emotion":
+            system_prompt = (
+                "Tu es Complice, un guide émotionnel doux et rassurant. "
+                "Tu t'adresses à des adolescents autistes avec empathie et clarté. "
+                "Utilise un ton chaleureux, encourageant, et ajoute des emojis doux pour rythmer la réponse."
+            )
+        else:
+            system_prompt = (
+                "Tu es Complice, un compagnon bienveillant pour discuter librement. "
+                "Tu valorises les émotions, tu rassures, et tu évites les formulations trop techniques. "
+                "Ajoute des emojis doux pour rendre la réponse plus accessible."
+            )
+
+        # 🧠 Fusionner le prompt avec la question
+        full_prompt = f"{system_prompt}\n\nQuestion : {question}"
+
+        response = qa_chain.invoke({"query": full_prompt})
         return response["result"]
+
     except Exception as e:
         import traceback
         error_details = traceback.format_exc()
