@@ -1,6 +1,10 @@
-# 🤖 COMPLICE Assistant Multimodal Bienveillant pour Jeunes Autistes
+# 🤖 Ce projet vise à créer un assistant conversationnel intelligent, combinant :
 
-Complice — Un compagnon pour comprendre, ressentir et prendre confiance
+- 🔍 Recherche sémantique dans une base documentaire sur l'autisme
+- 💬 Dialogue bienveillant pour s'exercer aux habiletés sociales
+- 🖼️ Génération d'images de visages exprimant des émotions pour l'apprentissage émotionnelCE Assistant Multimodal Bienveillant pour Jeunes Autistes
+
+Complice — Un compagnon pour compressentir et prendre confiance
 
 ## 🧠 Objectif du projet
 
@@ -16,7 +20,7 @@ L’objectif est de proposer un outil accessible, rassurant et éducatif pour le
 
 ## ✅ **Fonctionnalités réalisées et opérationnelles**
 
-- 🔍 **Recherche intelligente** : RAG basé sur une bilbiothèque au sujet de l'autisme, émotions et habiletés sociales
+- 🔍 **Recherche intelligente** : RAG basé sur une bibliothèque documentaire sur l'autisme, émotions et habiletés sociales
 - 💬 **Module dialogue bienveillant** : Chat empathique avec prompts contextualisés et accueil chaleureux
 - 🌈 **Module exploration émotionnelle** : 
   - 12 émotions avec descriptions pédagogiques
@@ -24,7 +28,7 @@ L’objectif est de proposer un outil accessible, rassurant et éducatif pour le
   - Sélecteur de personnage inclusif ("personne à visualiser")
   - Discussion empathique sur les émotions ressenties
 - 🎨 **Images contextualisées** : Génération DALL-E 3 avec paramètres personnalisables
-- 🛡️ **Sécurité & éthique** : Prompts bienveillants, ton adapté aux adolescents autistesn pour comprendre, ressentir et prendre confiance
+- 🛡️ **Sécurité & éthique** : Prompts bienveillants, ton adapté aux adolescents autistes
 
 ---
 
@@ -262,8 +266,9 @@ Les coéquipiers peuvent :
 - Ajouter de nouveaux textes sources (PDF éducatifs, guides, etc.)
 - Proposer des améliorations aux prompts pour plus de nuance
 - Tester des variantes de modèles (GPT-3.5, GPT-4o, Mistral…)
-- Créer/Enrichir une interface utilisateur (Streamlit, Gradio)
+- Enrichir l'interface utilisateur Streamlit (nouvelles fonctionnalités, design)
 - Ajouter des filtres thématiques ou des scores de pertinence
+- Améliorer le pipeline RAG et l'évaluation RAGAS
 
 ### 🧪 Bonnes pratiques
 
