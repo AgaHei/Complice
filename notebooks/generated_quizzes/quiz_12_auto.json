@@ -1,0 +1,11 @@
+{
+  "contexte": "Tu es à table avec tes parents et tu veux leur parler de pourquoi certains bruits ou textures te dérangent.",
+  "question": "Comment expliques-tu à tes parents ce que tu ressens ?",
+  "options": {
+    "A": "Je choisis un moment calme pour leur parler de mes ressentis en utilisant des exemples précis.",
+    "B": "Je leur dis que je n'aime pas ces choses sans donner plus de détails.",
+    "C": "Je garde mes ressentis pour moi et je n'en parle pas."
+  },
+  "bonne_reponse": "A",
+  "commentaire": "Choisir un moment calme pour expliquer tes ressentis à l'aide d'exemples précis aide tes parents à mieux comprendre ce que tu vis. Cela peut les aider à te soutenir plus efficacement."
+}

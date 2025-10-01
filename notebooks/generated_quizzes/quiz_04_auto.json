@@ -1,0 +1,11 @@
+{
+  "contexte": "Tu es en classe et tu ne comprends pas un exercice. Tu remarques que le professeur semble occupé avec d'autres élèves.",
+  "question": "Que fais-tu dans cette situation ?",
+  "options": {
+    "A": "Attendre que le professeur soit libre et lui demander de l'aide calmement.",
+    "B": "Interrompre le professeur pour poser ta question immédiatement.",
+    "C": "Ne rien faire et espérer comprendre plus tard."
+  },
+  "bonne_reponse": "A",
+  "commentaire": "Attendre que le professeur soit libre montre du respect pour son temps et pour les autres élèves. Cela te permet de recevoir de l'aide de manière appropriée sans perturber la classe."
+}

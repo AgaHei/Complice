@@ -1,0 +1,11 @@
+{
+  "contexte": "Quelqu'un se moque de tes centres d'intérêt devant d'autres personnes.",
+  "question": "Que fais-tu dans cette situation ?",
+  "options": {
+    "A": "Rester calme et leur dire que tout le monde a des intérêts différents et que c'est ce qui rend chacun unique.",
+    "B": "Ignorer la personne et quitter la pièce, en évitant tout contact visuel.",
+    "C": "Répondre de manière agressive pour défendre tes centres d'intérêt."
+  },
+  "bonne_reponse": "A",
+  "commentaire": "Rester calme et expliquer que chacun a des intérêts différents aide à promouvoir la compréhension et le respect. Cela montre que tu es confiant dans tes passions et que tu respectes aussi les différences des autres."
+}

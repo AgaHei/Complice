@@ -1,0 +1,264 @@
+{
+  "metadata": {
+    "total_quiz": 23,
+    "genere_le": "2025-10-01",
+    "projet": "Complice - Quiz habiletés sociales",
+    "version": "finale_melange_corrige",
+    "description": "Quiz avec réponses vraiment mélangées + quiz cantine intégré"
+  },
+  "quiz": [
+    {
+      "contexte": "Tu arrives en retard en cours et tu constates que tous les élèves et le professeur te regardent.",
+      "question": "Que fais-tu dans cette situation ?",
+      "options": {
+        "A": "Je m'excuse pour le retard, je m'installe discrètement à ma place et je me concentre sur le cours.",
+        "B": "Je reste à l'entrée de la classe sans rien dire, en espérant que quelqu'un viendra m'aider.",
+        "C": "J'entre bruyamment et je fais une blague pour détendre l'atmosphère."
+      },
+      "bonne_reponse": "A",
+      "commentaire": "S'excuser et s'installer discrètement montre du respect pour le professeur et les autres élèves. Cela permet aussi de reprendre le cours normalement sans trop attirer l'attention sur toi."
+    },
+    {
+      "contexte": "Ton professeur te demande de faire un exposé oral devant toute la classe. Tu es très stressé(e).",
+      "question": "Que fais-tu dans cette situation ?",
+      "options": {
+        "A": "Je parle à mon professeur de mon stress et je lui demande des conseils pour me préparer.",
+        "B": "Je refuse de faire l'exposé car je suis trop stressé(e).",
+        "C": "J'ignore le stress et je fais l'exposé sans préparation supplémentaire."
+      },
+      "bonne_reponse": "A",
+      "commentaire": "Il est important de communiquer avec ton professeur sur tes difficultés. Cela peut t'aider à obtenir du soutien et des conseils pour mieux gérer ton stress et te préparer à l'exposé."
+    },
+    {
+      "contexte": "Un camarade de classe est assis à côté de toi pendant un contrôle. Tu te rends compte qu'il essaie de copier sur toi. Tu te sens mal à l'aise et tu te demandes quelle est la meilleure façon de réagir.",
+      "question": "Que fais-tu dans cette situation ?",
+      "options": {
+        "A": "Tu lui dis calmement que tu n'es pas d'accord avec le fait qu'il copie sur toi.",
+        "B": "Tu ignores ce qu'il fait et te concentres sur ton propre test sans rien dire.",
+        "C": "Tu le laisses copier pour éviter de créer des problèmes."
+      },
+      "bonne_reponse": "A",
+      "commentaire": "Il est important de fixer des limites de manière respectueuse. En disant calmement à ton camarade que tu n'es pas d'accord avec le fait qu'il copie, tu montres que tu respectes les règles tout en restant bienveillant. Cela peut l'encourager à changer de comportement."
+    },
+    {
+      "contexte": "Tu es en classe et tu ne comprends pas un exercice. Tu remarques que le professeur semble occupé avec d'autres élèves.",
+      "question": "Que fais-tu dans cette situation ?",
+      "options": {
+        "A": "Ne rien faire et espérer comprendre plus tard.",
+        "B": "Attendre que le professeur soit libre et lui demander de l'aide calmement.",
+        "C": "Interrompre le professeur pour poser ta question immédiatement."
+      },
+      "bonne_reponse": "B",
+      "commentaire": "Attendre que le professeur soit libre montre du respect pour son temps et pour les autres élèves. Cela te permet de recevoir de l'aide de manière appropriée sans perturber la classe."
+    },
+    {
+      "contexte": "Tu es en classe et tu essaies de te concentrer sur ton travail, mais tes camarades de classe sont bruyants et cela te dérange.",
+      "question": "Que fais-tu dans cette situation ?",
+      "options": {
+        "A": "Tu leur demandes calmement de baisser le volume.",
+        "B": "Tu te lèves et quittes la classe sans rien dire.",
+        "C": "Tu ignores le bruit et continues à te concentrer."
+      },
+      "bonne_reponse": "A",
+      "commentaire": "Demander calmement à tes camarades de baisser le volume est une façon respectueuse de résoudre le problème. Cela montre que tu respectes ton propre besoin de concentration tout en étant attentif aux autres."
+    },
+    {
+      "contexte": "Un groupe d'amis discute de quelque chose qui t'intéresse, mais tu n'oses pas t'approcher.",
+      "question": "Que fais-tu dans cette situation ?",
+      "options": {
+        "A": "Tu quittes la pièce pour éviter de te sentir mal à l'aise.",
+        "B": "Tu prends une profonde inspiration et tu t'approches du groupe en disant bonjour.",
+        "C": "Tu restes à distance et écoutes sans intervenir."
+      },
+      "bonne_reponse": "B",
+      "commentaire": "Approcher le groupe et dire bonjour est une bonne façon de montrer ton intérêt pour la conversation. Cela te permet de participer et de te sentir inclus. Prendre une profonde inspiration peut t'aider à gérer l'anxiété que tu ressens avant de te lancer."
+    },
+    {
+      "contexte": "Quelqu'un se moque de tes centres d'intérêt devant d'autres personnes.",
+      "question": "Que fais-tu dans cette situation ?",
+      "options": {
+        "A": "Ignorer la personne et quitter la pièce, en évitant tout contact visuel.",
+        "B": "Répondre de manière agressive pour défendre tes centres d'intérêt.",
+        "C": "Rester calme et leur dire que tout le monde a des intérêts différents et que c'est ce qui rend chacun unique."
+      },
+      "bonne_reponse": "C",
+      "commentaire": "Rester calme et expliquer que chacun a des intérêts différents aide à promouvoir la compréhension et le respect. Cela montre que tu es confiant dans tes passions et que tu respectes aussi les différences des autres."
+    },
+    {
+      "contexte": "Tu veux inviter un camarade de classe à ton anniversaire, mais tu as peur qu'il ou elle refuse ton invitation.",
+      "question": "Que fais-tu dans cette situation ?",
+      "options": {
+        "A": "Je n'invite personne par peur du refus.",
+        "B": "Je vais voir mon camarade et je lui demande directement s'il souhaite venir à mon anniversaire.",
+        "C": "Je demande à un autre ami de lui parler de mon anniversaire à ma place."
+      },
+      "bonne_reponse": "B",
+      "commentaire": "Inviter directement ton camarade montre que tu es ouvert et courageux, même si tu as peur du refus. Cela laisse la possibilité à ton camarade de te répondre honnêtement et montre que tu tiens à sa présence."
+    },
+    {
+      "contexte": "Tes amis planifient une sortie pour aller voir un film d'horreur, mais tu n'aimes pas ce genre de films. Ils t'invitent à te joindre à eux.",
+      "question": "Que fais-tu dans cette situation ?",
+      "options": {
+        "A": "Je dis que je suis occupé ce jour-là, même si ce n'est pas vrai.",
+        "B": "Je leur dis honnêtement que les films d'horreur ne m'intéressent pas, mais je leur propose de faire quelque chose ensemble une autre fois.",
+        "C": "J'accepte d'y aller même si je sais que je ne vais pas aimer ça."
+      },
+      "bonne_reponse": "B",
+      "commentaire": "Il est important d'être honnête avec tes amis à propos de tes préférences. En proposant de faire quelque chose d'autre une prochaine fois, tu montres que tu tiens à passer du temps avec eux tout en respectant tes propres goûts."
+    },
+    {
+      "contexte": "Tu viens d'apprendre que des rumeurs fausses circulent à ton sujet dans ton école.",
+      "question": "Que fais-tu dans cette situation ?",
+      "options": {
+        "A": "Tu commences à répandre des rumeurs sur la personne qui a parlé de toi.",
+        "B": "Tu parles directement à la personne qui propage les rumeurs pour clarifier la situation.",
+        "C": "Tu ignores les rumeurs et continues ta journée."
+      },
+      "bonne_reponse": "B",
+      "commentaire": "Parler directement à la personne qui propage les rumeurs est une approche proactive et mature. Cela te permet de clarifier la situation et de faire comprendre que les rumeurs sont fausses. Ignorer les rumeurs peut parfois fonctionner, mais cela ne résout pas toujours le problème. Répandre des rumeurs en retour n'est pas une solution et peut aggraver la situation."
+    },
+    {
+      "contexte": "Tes parents te demandent de ranger ta chambre alors que tu es concentré(e) sur ton activité favorite.",
+      "question": "Que fais-tu dans cette situation ?",
+      "options": {
+        "A": "Je leur demande gentiment de me laisser finir mon activité et de ranger ma chambre ensuite.",
+        "B": "Je m'énerve et je leur dis que je ne veux pas ranger.",
+        "C": "J'ignore leur demande et continue mon activité."
+      },
+      "bonne_reponse": "A",
+      "commentaire": "Il est important de communiquer calmement avec tes parents. Leur demander gentiment de terminer ce que tu fais avant de ranger montre du respect et de la responsabilité."
+    },
+    {
+      "contexte": "Tu es à table avec tes parents et tu veux leur parler de pourquoi certains bruits ou textures te dérangent.",
+      "question": "Comment expliques-tu à tes parents ce que tu ressens ?",
+      "options": {
+        "A": "Je leur dis que je n'aime pas ces choses sans donner plus de détails.",
+        "B": "Je choisis un moment calme pour leur parler de mes ressentis en utilisant des exemples précis.",
+        "C": "Je garde mes ressentis pour moi et je n'en parle pas."
+      },
+      "bonne_reponse": "B",
+      "commentaire": "Choisir un moment calme pour expliquer tes ressentis à l'aide d'exemples précis aide tes parents à mieux comprendre ce que tu vis. Cela peut les aider à te soutenir plus efficacement."
+    },
+    {
+      "contexte": "Ta famille organise un grand repas avec beaucoup de monde et de bruit. Tu te sens dépassé(e).",
+      "question": "Que fais-tu dans cette situation ?",
+      "options": {
+        "A": "Je trouve un endroit calme pour me reposer un moment.",
+        "B": "Je reste dans le bruit même si c'est difficile.",
+        "C": "Je me mets en colère et crie."
+      },
+      "bonne_reponse": "A",
+      "commentaire": "Il est important de prendre soin de soi. Trouver un endroit calme pour se reposer peut aider à se sentir mieux et à gérer la situation de manière positive. Cela permet de revenir dans l'environnement social quand on se sent prêt(e)."
+    },
+    {
+      "contexte": "Tu es dans un magasin et tu ne trouves pas ce que tu cherches.",
+      "question": "Que fais-tu dans cette situation ?",
+      "options": {
+        "A": "Tu quittes le magasin sans demander d'aide.",
+        "B": "Tu cherches un vendeur et dis : 'Excusez-moi, pourriez-vous m'aider à trouver cet article ?'",
+        "C": "Tu continues à chercher tout seul même si tu es perdu."
+      },
+      "bonne_reponse": "B",
+      "commentaire": "Demander de l'aide à un vendeur est une manière appropriée et efficace de trouver ce que tu cherches. Les vendeurs sont là pour t'aider, et il est tout à fait correct de leur demander de l'assistance."
+    },
+    {
+      "contexte": "Tu es dans les transports en commun et une personne à proximité écoute de la musique très fort. Cela te dérange et tu te sens inconfortable.",
+      "question": "Que fais-tu dans cette situation ?",
+      "options": {
+        "A": "Tu te rapproches de la personne et lui demandes poliment de baisser le volume.",
+        "B": "Tu te lèves et changes de place pour t'éloigner de la source du bruit.",
+        "C": "Tu commences à écouter ta propre musique plus fort pour couvrir le bruit."
+      },
+      "bonne_reponse": "A",
+      "commentaire": "Demander poliment à quelqu'un de baisser le volume de sa musique est une façon respectueuse de résoudre le problème. Cela donne à la personne l'occasion de prendre conscience de son impact sur les autres et de corriger la situation sans confrontation."
+    },
+    {
+      "contexte": "Tu es dans une file d'attente et quelqu'un passe devant toi sans faire exprès.",
+      "question": "Que fais-tu dans cette situation ?",
+      "options": {
+        "A": "Tu lui demandes poliment s'il peut retourner à sa place derrière toi.",
+        "B": "Tu l'ignores et laisses passer.",
+        "C": "Tu lui cries dessus pour qu'il retourne à sa place."
+      },
+      "bonne_reponse": "A",
+      "commentaire": "Demander poliment à la personne de retourner à sa place permet de clarifier la situation sans créer de conflit. Il est possible qu'elle ne se soit pas rendu compte de son erreur."
+    },
+    {
+      "contexte": "Tu te trouves dans un grand centre commercial et tu réalises que tu es perdu(e). Tu veux trouver le magasin où tu devais te rendre, mais tu ne sais pas par où aller.",
+      "question": "Que fais-tu dans cette situation ?",
+      "options": {
+        "A": "Chercher un agent de sécurité ou un employé du centre commercial pour demander de l'aide.",
+        "B": "Rester sur place et attendre que quelqu'un vienne t'aider.",
+        "C": "Essayer de trouver ton chemin tout seul en regardant les plans du centre commercial."
+      },
+      "bonne_reponse": "A",
+      "commentaire": "Demander de l'aide à un agent de sécurité ou à un employé est une bonne option car ils connaissent bien le centre commercial et pourront te guider rapidement et efficacement. Cela te permettra de trouver ton chemin sans te sentir frustré(e) ou anxieux(se)."
+    },
+    {
+      "contexte": "Tu as un désaccord avec ton meilleur ami sur quelque chose d'important pour toi.",
+      "question": "Que fais-tu dans cette situation ?",
+      "options": {
+        "A": "Tu écoutes calmement le point de vue de ton ami et expliques le tien sans te fâcher.",
+        "B": "Tu évites de parler du désaccord pour ne pas créer de conflit.",
+        "C": "Tu insistes pour que ton ami comprenne ton point de vue en élevant la voix."
+      },
+      "bonne_reponse": "A",
+      "commentaire": "Écouter calmement et partager ton point de vue sans colère montre du respect et peut aider à résoudre le désaccord de manière constructive."
+    },
+    {
+      "contexte": "Quelqu'un a critiqué tes habitudes ou tes routines, et cela t'a blessé(e).",
+      "question": "Que fais-tu dans cette situation ?",
+      "options": {
+        "A": "Prendre un moment pour respirer profondément et réfléchir à la critique avant de répondre.",
+        "B": "Répondre immédiatement avec colère pour te défendre.",
+        "C": "Ignorer complètement la critique comme si elle n'avait jamais été dite."
+      },
+      "bonne_reponse": "A",
+      "commentaire": "Prendre un moment pour respirer et réfléchir te permet de gérer tes émotions et de choisir une réponse appropriée. Cela montre que tu es capable de prendre du recul et de ne pas réagir impulsivement, ce qui est une compétence sociale précieuse."
+    },
+    {
+      "contexte": "Tu es à une fête d'anniversaire avec beaucoup de monde, de la musique forte et des lumières clignotantes. Cela commence à te submerger et tu te sens stressé.",
+      "question": "Que fais-tu dans cette situation ?",
+      "options": {
+        "A": "Crier pour demander aux gens de baisser le volume de la musique.",
+        "B": "Rester au milieu de la fête et essayer de t'habituer au bruit.",
+        "C": "Trouver un endroit calme pour faire une pause et respirer profondément."
+      },
+      "bonne_reponse": "C",
+      "commentaire": "Il est important de prendre soin de soi dans des situations stressantes. Trouver un endroit calme pour se calmer est une stratégie efficace pour gérer la surcharge sensorielle. Cela te permet de te recentrer avant de décider si tu veux retourner à la fête ou non."
+    },
+    {
+      "contexte": "Tu es à l'école et tu remarques un camarade de classe qui semble triste et isolé pendant la pause. Tu veux l'aider mais tu ne sais pas comment t'y prendre.",
+      "question": "Que fais-tu dans cette situation ?",
+      "options": {
+        "A": "Je demande à un enseignant de s'occuper de lui.",
+        "B": "Je l'ignore et continue à faire mes propres activités.",
+        "C": "Je m'approche de lui et lui demande si tout va bien."
+      },
+      "bonne_reponse": "C",
+      "commentaire": "Approcher quelqu'un qui semble triste et lui demander comment il se sent montre que tu te soucies de lui. Cela peut l'aider à se sentir soutenu et lui donner l'opportunité de parler de ses sentiments. Assure-toi de respecter sa réponse et son espace personnel."
+    },
+    {
+      "contexte": "Un camarade te demande de l'aide pour quelque chose que tu maîtrises bien.",
+      "question": "Que fais-tu dans cette situation ?",
+      "options": {
+        "A": "Je fais le travail à sa place pour qu'il n'ait pas à s'inquiéter.",
+        "B": "Je prends le temps de lui expliquer patiemment en utilisant des exemples.",
+        "C": "Je lui dis que je suis trop occupé pour l'aider."
+      },
+      "bonne_reponse": "B",
+      "commentaire": "Prendre le temps d'expliquer avec patience aide ton camarade à comprendre par lui-même, ce qui est plus bénéfique pour son apprentissage. Utiliser des exemples rend les explications plus claires et accessibles."
+    },
+    {
+      "contexte": "Tu es à la cantine et tu cherches une place. Tu vois une personne seule. Tu aimerais te joindre à elle.",
+      "question": "Que fais-tu dans cette situation ?",
+      "options": {
+        "A": "Tu t'assois sans rien dire, en espérant qu'elle soit d'accord.",
+        "B": "Tu t'approches et demandes poliment si tu peux t'asseoir avec elle.",
+        "C": "Tu cherches une autre table, même si tu préfères t'asseoir avec elle."
+      },
+      "bonne_reponse": "B",
+      "commentaire": "Demander poliment avant de s'asseoir montre du respect pour l'espace de l'autre personne et ouvre la possibilité d'une interaction positive. Cela permet aussi à l'autre personne de te répondre et de créer un échange amical."
+    }
+  ]
+}

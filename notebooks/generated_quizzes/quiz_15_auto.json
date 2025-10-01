@@ -1,0 +1,11 @@
+{
+  "contexte": "Tu es dans les transports en commun et une personne à proximité écoute de la musique très fort. Cela te dérange et tu te sens inconfortable.",
+  "question": "Que fais-tu dans cette situation ?",
+  "options": {
+    "A": "Tu te rapproches de la personne et lui demandes poliment de baisser le volume.",
+    "B": "Tu te lèves et changes de place pour t'éloigner de la source du bruit.",
+    "C": "Tu commences à écouter ta propre musique plus fort pour couvrir le bruit."
+  },
+  "bonne_reponse": "A",
+  "commentaire": "Demander poliment à quelqu'un de baisser le volume de sa musique est une façon respectueuse de résoudre le problème. Cela donne à la personne l'occasion de prendre conscience de son impact sur les autres et de corriger la situation sans confrontation."
+}

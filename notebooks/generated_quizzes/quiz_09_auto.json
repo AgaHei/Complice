@@ -1,0 +1,11 @@
+{
+  "contexte": "Tes amis planifient une sortie pour aller voir un film d'horreur, mais tu n'aimes pas ce genre de films. Ils t'invitent à te joindre à eux.",
+  "question": "Que fais-tu dans cette situation ?",
+  "options": {
+    "A": "Je leur dis honnêtement que les films d'horreur ne m'intéressent pas, mais je leur propose de faire quelque chose ensemble une autre fois.",
+    "B": "Je dis que je suis occupé ce jour-là, même si ce n'est pas vrai.",
+    "C": "J'accepte d'y aller même si je sais que je ne vais pas aimer ça."
+  },
+  "bonne_reponse": "A",
+  "commentaire": "Il est important d'être honnête avec tes amis à propos de tes préférences. En proposant de faire quelque chose d'autre une prochaine fois, tu montres que tu tiens à passer du temps avec eux tout en respectant tes propres goûts."
+}

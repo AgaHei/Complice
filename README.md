@@ -1,18 +1,16 @@
-# 🤖 Ce projet vise à créer un assistant conversationnel intelligent, combinant :
-
-- 🔍 Recherche sémantique dans une base documentaire sur l'autisme
-- 💬 Dialogue bienveillant pour s'exercer aux habiletés sociales
-- 🖼️ Génération d'images de visages exprimant des émotions pour l'apprentissage émotionnelCE Assistant Multimodal Bienveillant pour Jeunes Autistes
+# 🤗 COMPLICE : Assistant Multimodal Bienveillant pour Jeunes Autistes
 
 Complice — Un compagnon pour compressentir et prendre confiance
 
+Ce projet vise à créer un assistant conversationnel intelligent, combinant:
+
+- 🔍 **Recherche intelligente** : L'utilisateur peut poser des questions sur l'autisme, les émotions, les relations sociales…
+- 💬 **Chat bienveillant** : Dialogue rassurant, adapté au niveau de compréhension
+- 🖼️ **Images émotionnelles** : Génération de visages exprimant des émotions (joie, colère, tristesse, etc.)
+- 🎯 **Quiz interactifs** : 23 scénarios d'apprentissage pour développer les habiletés sociales
+- 🛡️ **Sécurité & éthique** : Filtrage des réponses, personnalisation du ton et du niveau de difficulté intelligent, combinant :
+
 ## 🧠 Objectif du projet
-
-Ce projet vise à créer un assistant conversationnel intelligent, combinant :
-
-🔍 Recherche sémantique dans une base documentaire sur l’autisme
-💬 Dialogue bienveillant pour s’exercer aux habiletés sociales
-🖼️ Génération d’images de visages exprimant des émotions pour l’apprentissage émotionnel
 
 L’objectif est de proposer un outil accessible, rassurant et éducatif pour les jeunes autistes en quête de compréhension et d’autonomie.
 
@@ -27,7 +25,8 @@ L’objectif est de proposer un outil accessible, rassurant et éducatif pour le
   - Génération d'images DALL-E personnalisées (âge, lieu, moment)
   - Sélecteur de personnage inclusif ("personne à visualiser")
   - Discussion empathique sur les émotions ressenties
-- 🎨 **Images contextualisées** : Génération DALL-E 3 avec paramètres personnalisables
+  - Génération DALL-E 3 avec paramètres personnalisables
+- 🎯 **Module Quiz interactifs** : 23 scénarios d'apprentissage pour développer les habiletés sociales
 - 🛡️ **Sécurité & éthique** : Prompts bienveillants, ton adapté aux adolescents autistes
 
 ---
@@ -57,11 +56,16 @@ L’objectif est de proposer un outil accessible, rassurant et éducatif pour le
         │   ├── 03_embeddings.ipynb # génération des vecteurs
         │   ├── 04_indexation_faiss.ipynb # création du vectorstore (.faiss + .pkl)   
         │   ├── 05_rag_pipeline.ipynb # requêtes RAG avec GPT-4o
-        │   └── 06_validation_rag.ipynb # boucle de questions test et évaluation RAGAS
-        ├── interface/             # 🎉 Interface Streamlit fonctionnelle
-        │   ├── app.py              # Interface principale avec modules dialogue et émotion
+        │   ├── 06_validation_rag.ipynb # boucle de questions test et évaluation RAGAS
+        │   └── 07_generate_quiz.ipynb # génération automatisée de quiz avec GPT-4o
+        ├── interface/             # 🎉 Interface Streamlit complète et fonctionnelle
+        │   ├── app.py              # Interface principale avec 4 modules complets
         │   ├── rag_module.py       # Pipeline RAG avec prompts bienveillants
         │   ├── image_module.py     # Génération d'images DALL-E personnalisées
+        │   ├── quiz_module.py      # Système de quiz interactifs pour habiletés sociales
+        │   ├── data/               # Données des quiz (23 scenarios d'apprentissage)
+        │   │   ├── quiz_complets_melanges_corriges.json
+        │   │   └── quiz_test.json
         │   └── venv/               # Environnement virtuel Python configuré
         │
         ├── .gitignore                   # Fichiers à exclure du suivi Git
@@ -107,15 +111,6 @@ L’objectif est de proposer un outil accessible, rassurant et éducatif pour le
 ## 📚 Sources documentaires
 
 Les textes utilisés sont des ouvrages éducatifs sur l’autisme, l’adolescence et les habiletés sociales. Tous les documents sont légalement accessibles et utilisés dans un cadre non-commercial et pédagogique.
-
----
-
-## 🧪 Fonctionnalités principales
-
-- 🔍 **Recherche intelligente** : L’utilisateur peut poser des questions sur l’autisme, les émotions, les relations sociales…
-- 💬 **Chat bienveillant** : Dialogue rassurant, adapté au niveau de compréhension
-- 🖼️ **Images émotionnelles** : Génération de visages exprimant des émotions (joie, colère, tristesse, etc.)
-- 🛡️ **Sécurité & éthique** : Filtrage des réponses, personnalisation du ton et du niveau de difficulté
 
 ---
 
@@ -224,9 +219,16 @@ streamlit run app.py
 - **Local** : http://localhost:8501
 - **Réseau** : http://[votre-ip]:8501
 
+> ⚠️ **Important** : Assurez-vous d'avoir configuré votre clé OpenAI dans le fichier `.env` à la racine du projet
+
 ## 🎉 Fonctionnalités disponibles
 
-### 💬 Module "Discuter avec Complice"
+### � Module "À propos"
+- Présentation de Complice et de sa mission
+- Informations sur l'équipe et les objectifs pédagogiques
+- Guide d'utilisation des différents modules
+
+### �💬 Module "Discuter avec Complice"
 - Message d'accueil bienveillant
 - Chat empathique avec RAG contextuel
 - Prompts adaptés aux adolescents autistes
@@ -240,6 +242,17 @@ streamlit run app.py
   - 👦👧 Personnage inclusif
 - Génération d'images DALL-E 3 contextualisées
 - Discussion empathique sur l'émotion explorée
+
+### 🎯 Module "Quiz avec Complice"
+- **23 scénarios d'apprentissage** couvrant diverses situations sociales :
+  - 🏫 Situations scolaires (interactions en classe, récréation, cantine)
+  - 👨‍👩‍👧‍👦 Contextes familiaux (repas, sorties, discussions)
+  - 🎭 Interactions sociales (amitié, conflits, événements)
+  - 🌍 Situations publiques (transports, commerces, loisirs)
+- **Questions à choix multiples** avec 4 options par scénario
+- **Feedback constructif** : explications bienveillantes pour chaque réponse
+- **Apprentissage progressif** : découverte de nouvelles stratégies sociales
+- **Interface intuitive** : navigation simple et encourageante
 
 🐛 Problèmes courants
 Docker n'arrive pas à se connecter ?

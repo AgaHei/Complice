@@ -1,0 +1,11 @@
+{
+  "contexte": "Ton professeur te demande de faire un exposé oral devant toute la classe. Tu es très stressé(e).",
+  "question": "Que fais-tu dans cette situation ?",
+  "options": {
+    "A": "Je parle à mon professeur de mon stress et je lui demande des conseils pour me préparer.",
+    "B": "J'ignore le stress et je fais l'exposé sans préparation supplémentaire.",
+    "C": "Je refuse de faire l'exposé car je suis trop stressé(e)."
+  },
+  "bonne_reponse": "A",
+  "commentaire": "Il est important de communiquer avec ton professeur sur tes difficultés. Cela peut t'aider à obtenir du soutien et des conseils pour mieux gérer ton stress et te préparer à l'exposé."
+}

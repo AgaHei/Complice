@@ -1,0 +1,11 @@
+{
+  "contexte": "Tu arrives en retard en cours et tu constates que tous les élèves et le professeur te regardent.",
+  "question": "Que fais-tu dans cette situation ?",
+  "options": {
+    "A": "Je m'excuse pour le retard, je m'installe discrètement à ma place et je me concentre sur le cours.",
+    "B": "J'entre bruyamment et je fais une blague pour détendre l'atmosphère.",
+    "C": "Je reste à l'entrée de la classe sans rien dire, en espérant que quelqu'un viendra m'aider."
+  },
+  "bonne_reponse": "A",
+  "commentaire": "S'excuser et s'installer discrètement montre du respect pour le professeur et les autres élèves. Cela permet aussi de reprendre le cours normalement sans trop attirer l'attention sur toi."
+}

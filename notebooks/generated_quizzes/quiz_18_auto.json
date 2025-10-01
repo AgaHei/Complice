@@ -1,0 +1,11 @@
+{
+  "contexte": "Tu as un désaccord avec ton meilleur ami sur quelque chose d'important pour toi.",
+  "question": "Que fais-tu dans cette situation ?",
+  "options": {
+    "A": "Tu écoutes calmement le point de vue de ton ami et expliques le tien sans te fâcher.",
+    "B": "Tu évites de parler du désaccord pour ne pas créer de conflit.",
+    "C": "Tu insistes pour que ton ami comprenne ton point de vue en élevant la voix."
+  },
+  "bonne_reponse": "A",
+  "commentaire": "Écouter calmement et partager ton point de vue sans colère montre du respect et peut aider à résoudre le désaccord de manière constructive."
+}

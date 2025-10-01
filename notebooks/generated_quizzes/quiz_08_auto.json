@@ -1,0 +1,11 @@
+{
+  "contexte": "Tu veux inviter un camarade de classe à ton anniversaire, mais tu as peur qu'il ou elle refuse ton invitation.",
+  "question": "Que fais-tu dans cette situation ?",
+  "options": {
+    "A": "Je vais voir mon camarade et je lui demande directement s'il souhaite venir à mon anniversaire.",
+    "B": "Je n'invite personne par peur du refus.",
+    "C": "Je demande à un autre ami de lui parler de mon anniversaire à ma place."
+  },
+  "bonne_reponse": "A",
+  "commentaire": "Inviter directement ton camarade montre que tu es ouvert et courageux, même si tu as peur du refus. Cela laisse la possibilité à ton camarade de te répondre honnêtement et montre que tu tiens à sa présence."
+}

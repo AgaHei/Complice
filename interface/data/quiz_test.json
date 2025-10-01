@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "total_quiz": 3,
+    "genere_le": "2025-10-01",
+    "projet": "Complice - Quiz habiletés sociales",
+    "version": "test_local",
+    "description": "Quiz de test pour l'interface Streamlit"
+  },
+  "quiz": [
+    {
+      "contexte": "Tu arrives en retard en cours et tu constates que tous les élèves et le professeur te regardent.",
+      "question": "Que fais-tu dans cette situation ?",
+      "options": {
+        "A": "Je reste à l'entrée de la classe sans rien dire, en espérant que quelqu'un viendra m'aider.",
+        "B": "Je m'excuse pour le retard, je m'installe discrètement à ma place et je me concentre sur le cours.",
+        "C": "J'entre bruyamment et je fais une blague pour détendre l'atmosphère."
+      },
+      "bonne_reponse": "B",
+      "commentaire": "S'excuser et s'installer discrètement montre du respect pour le professeur et les autres élèves. Cela permet aussi de reprendre le cours normalement sans trop attirer l'attention sur toi."
+    },
+    {
+      "contexte": "Ton professeur te demande de faire un exposé oral devant toute la classe. Tu es très stressé(e).",
+      "question": "Que fais-tu dans cette situation ?",
+      "options": {
+        "A": "Je refuse de faire l'exposé car je suis trop stressé(e).",
+        "B": "J'ignore le stress et je fais l'exposé sans préparation supplémentaire.",
+        "C": "Je parle à mon professeur de mon stress et je lui demande des conseils pour me préparer."
+      },
+      "bonne_reponse": "C",
+      "commentaire": "Il est important de communiquer avec ton professeur sur tes difficultés. Cela peut t'aider à obtenir du soutien et des conseils pour mieux gérer ton stress et te préparer à l'exposé."
+    },
+    {
+      "contexte": "Un camarade de classe est assis à côté de toi pendant un contrôle. Tu te rends compte qu'il essaie de copier sur toi.",
+      "question": "Que fais-tu dans cette situation ?",
+      "options": {
+        "A": "Tu ignores ce qu'il fait et te concentres sur ton propre test sans rien dire.",
+        "B": "Tu le laisses copier pour éviter de créer des problèmes.", 
+        "C": "Tu lui dis calmement que tu n'es pas d'accord avec le fait qu'il copie sur toi.",
+        "D": "Tu appelles immédiatement le professeur."
+      },
+      "bonne_reponse": "C",
+      "commentaire": "Il est important de fixer des limites de manière respectueuse. En disant calmement à ton camarade que tu n'es pas d'accord avec le fait qu'il copie, tu montres que tu respectes les règles tout en restant bienveillant."
+    }
+  ]
+}

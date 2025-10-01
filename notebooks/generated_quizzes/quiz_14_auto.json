@@ -1,0 +1,11 @@
+{
+  "contexte": "Tu es dans un magasin et tu ne trouves pas ce que tu cherches.",
+  "question": "Que fais-tu dans cette situation ?",
+  "options": {
+    "A": "Tu cherches un vendeur et dis : 'Excusez-moi, pourriez-vous m'aider à trouver cet article ?'",
+    "B": "Tu continues à chercher tout seul même si tu es perdu.",
+    "C": "Tu quittes le magasin sans demander d'aide."
+  },
+  "bonne_reponse": "A",
+  "commentaire": "Demander de l'aide à un vendeur est une manière appropriée et efficace de trouver ce que tu cherches. Les vendeurs sont là pour t'aider, et il est tout à fait correct de leur demander de l'assistance."
+}

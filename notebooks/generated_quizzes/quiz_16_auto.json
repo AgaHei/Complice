@@ -1,0 +1,11 @@
+{
+  "contexte": "Tu es dans une file d'attente et quelqu'un passe devant toi sans faire exprès.",
+  "question": "Que fais-tu dans cette situation ?",
+  "options": {
+    "A": "Tu lui demandes poliment s'il peut retourner à sa place derrière toi.",
+    "B": "Tu l'ignores et laisses passer.",
+    "C": "Tu lui cries dessus pour qu'il retourne à sa place."
+  },
+  "bonne_reponse": "A",
+  "commentaire": "Demander poliment à la personne de retourner à sa place permet de clarifier la situation sans créer de conflit. Il est possible qu'elle ne se soit pas rendu compte de son erreur."
+}

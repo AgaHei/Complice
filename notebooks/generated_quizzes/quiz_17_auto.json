@@ -1,0 +1,11 @@
+{
+  "contexte": "Tu te trouves dans un grand centre commercial et tu réalises que tu es perdu(e). Tu veux trouver le magasin où tu devais te rendre, mais tu ne sais pas par où aller.",
+  "question": "Que fais-tu dans cette situation ?",
+  "options": {
+    "A": "Chercher un agent de sécurité ou un employé du centre commercial pour demander de l'aide.",
+    "B": "Essayer de trouver ton chemin tout seul en regardant les plans du centre commercial.",
+    "C": "Rester sur place et attendre que quelqu'un vienne t'aider."
+  },
+  "bonne_reponse": "A",
+  "commentaire": "Demander de l'aide à un agent de sécurité ou à un employé est une bonne option car ils connaissent bien le centre commercial et pourront te guider rapidement et efficacement. Cela te permettra de trouver ton chemin sans te sentir frustré(e) ou anxieux(se)."
+}

@@ -1,0 +1,11 @@
+{
+  "contexte": "Un groupe d'amis discute de quelque chose qui t'intéresse, mais tu n'oses pas t'approcher.",
+  "question": "Que fais-tu dans cette situation ?",
+  "options": {
+    "A": "Tu prends une profonde inspiration et tu t'approches du groupe en disant bonjour.",
+    "B": "Tu restes à distance et écoutes sans intervenir.",
+    "C": "Tu quittes la pièce pour éviter de te sentir mal à l'aise."
+  },
+  "bonne_reponse": "A",
+  "commentaire": "Approcher le groupe et dire bonjour est une bonne façon de montrer ton intérêt pour la conversation. Cela te permet de participer et de te sentir inclus. Prendre une profonde inspiration peut t'aider à gérer l'anxiété que tu ressens avant de te lancer."
+}

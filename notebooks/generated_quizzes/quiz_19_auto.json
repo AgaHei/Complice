@@ -1,0 +1,11 @@
+{
+  "contexte": "Quelqu'un a critiqué tes habitudes ou tes routines, et cela t'a blessé(e).",
+  "question": "Que fais-tu dans cette situation ?",
+  "options": {
+    "A": "Prendre un moment pour respirer profondément et réfléchir à la critique avant de répondre.",
+    "B": "Répondre immédiatement avec colère pour te défendre.",
+    "C": "Ignorer complètement la critique comme si elle n'avait jamais été dite."
+  },
+  "bonne_reponse": "A",
+  "commentaire": "Prendre un moment pour respirer et réfléchir te permet de gérer tes émotions et de choisir une réponse appropriée. Cela montre que tu es capable de prendre du recul et de ne pas réagir impulsivement, ce qui est une compétence sociale précieuse."
+}

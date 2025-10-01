@@ -1,0 +1,11 @@
+{
+  "contexte": "Tu es en classe et tu essaies de te concentrer sur ton travail, mais tes camarades de classe sont bruyants et cela te dérange.",
+  "question": "Que fais-tu dans cette situation ?",
+  "options": {
+    "A": "Tu leur demandes calmement de baisser le volume.",
+    "B": "Tu te lèves et quittes la classe sans rien dire.",
+    "C": "Tu ignores le bruit et continues à te concentrer."
+  },
+  "bonne_reponse": "A",
+  "commentaire": "Demander calmement à tes camarades de baisser le volume est une façon respectueuse de résoudre le problème. Cela montre que tu respectes ton propre besoin de concentration tout en étant attentif aux autres."
+}

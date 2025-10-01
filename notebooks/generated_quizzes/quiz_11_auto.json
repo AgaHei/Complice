@@ -1,0 +1,11 @@
+{
+  "contexte": "Tes parents te demandent de ranger ta chambre alors que tu es concentré(e) sur ton activité favorite.",
+  "question": "Que fais-tu dans cette situation ?",
+  "options": {
+    "A": "Je leur demande gentiment de me laisser finir mon activité et de ranger ma chambre ensuite.",
+    "B": "J'ignore leur demande et continue mon activité.",
+    "C": "Je m'énerve et je leur dis que je ne veux pas ranger."
+  },
+  "bonne_reponse": "A",
+  "commentaire": "Il est important de communiquer calmement avec tes parents. Leur demander gentiment de terminer ce que tu fais avant de ranger montre du respect et de la responsabilité."
+}

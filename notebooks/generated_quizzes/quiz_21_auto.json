@@ -1,0 +1,11 @@
+{
+  "contexte": "Tu es à l'école et tu remarques un camarade de classe qui semble triste et isolé pendant la pause. Tu veux l'aider mais tu ne sais pas comment t'y prendre.",
+  "question": "Que fais-tu dans cette situation ?",
+  "options": {
+    "A": "Je m'approche de lui et lui demande si tout va bien.",
+    "B": "Je l'ignore et continue à faire mes propres activités.",
+    "C": "Je demande à un enseignant de s'occuper de lui."
+  },
+  "bonne_reponse": "A",
+  "commentaire": "Approcher quelqu'un qui semble triste et lui demander comment il se sent montre que tu te soucies de lui. Cela peut l'aider à se sentir soutenu et lui donner l'opportunité de parler de ses sentiments. Assure-toi de respecter sa réponse et son espace personnel."
+}

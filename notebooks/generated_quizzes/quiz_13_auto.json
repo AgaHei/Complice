@@ -1,0 +1,11 @@
+{
+  "contexte": "Ta famille organise un grand repas avec beaucoup de monde et de bruit. Tu te sens dépassé(e).",
+  "question": "Que fais-tu dans cette situation ?",
+  "options": {
+    "A": "Je trouve un endroit calme pour me reposer un moment.",
+    "B": "Je reste dans le bruit même si c'est difficile.",
+    "C": "Je me mets en colère et crie."
+  },
+  "bonne_reponse": "A",
+  "commentaire": "Il est important de prendre soin de soi. Trouver un endroit calme pour se reposer peut aider à se sentir mieux et à gérer la situation de manière positive. Cela permet de revenir dans l'environnement social quand on se sent prêt(e)."
+}

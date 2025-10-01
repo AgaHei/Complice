@@ -1,0 +1,11 @@
+{
+  "contexte": "Un camarade te demande de l'aide pour quelque chose que tu maîtrises bien.",
+  "question": "Que fais-tu dans cette situation ?",
+  "options": {
+    "A": "Je prends le temps de lui expliquer patiemment en utilisant des exemples.",
+    "B": "Je lui dis que je suis trop occupé pour l'aider.",
+    "C": "Je fais le travail à sa place pour qu'il n'ait pas à s'inquiéter."
+  },
+  "bonne_reponse": "A",
+  "commentaire": "Prendre le temps d'expliquer avec patience aide ton camarade à comprendre par lui-même, ce qui est plus bénéfique pour son apprentissage. Utiliser des exemples rend les explications plus claires et accessibles."
+}

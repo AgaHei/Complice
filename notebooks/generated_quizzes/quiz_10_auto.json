@@ -1,0 +1,11 @@
+{
+  "contexte": "Tu viens d'apprendre que des rumeurs fausses circulent à ton sujet dans ton école.",
+  "question": "Que fais-tu dans cette situation ?",
+  "options": {
+    "A": "Tu ignores les rumeurs et continues ta journée.",
+    "B": "Tu parles directement à la personne qui propage les rumeurs pour clarifier la situation.",
+    "C": "Tu commences à répandre des rumeurs sur la personne qui a parlé de toi."
+  },
+  "bonne_reponse": "B",
+  "commentaire": "Parler directement à la personne qui propage les rumeurs est une approche proactive et mature. Cela te permet de clarifier la situation et de faire comprendre que les rumeurs sont fausses. Ignorer les rumeurs peut parfois fonctionner, mais cela ne résout pas toujours le problème. Répandre des rumeurs en retour n'est pas une solution et peut aggraver la situation."
+}

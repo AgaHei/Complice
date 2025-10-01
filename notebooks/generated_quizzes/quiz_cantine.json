@@ -1,0 +1,11 @@
+{
+  "contexte": "Tu es à la cantine et tu cherches une place. Tu vois une personne seule. Tu aimerais te joindre à elle.",
+  "question": "Que fais-tu dans cette situation ?",
+  "options": {
+    "A": "Tu t'approches et demandes poliment si tu peux t'asseoir avec elle.",
+    "B": "Tu t'assois sans rien dire, en espérant qu'elle soit d'accord.",
+    "C": "Tu cherches une autre table, même si tu préfères t'asseoir avec elle."
+  },
+  "bonne_reponse": "A",
+  "commentaire": "Demander poliment avant de s'asseoir montre du respect pour l'espace de l'autre personne et ouvre la possibilité d'une interaction positive. Cela permet aussi à l'autre personne de te répondre et de créer un échange amical."
+}
