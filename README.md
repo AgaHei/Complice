@@ -1,13 +1,13 @@
 # 🤗 COMPLICE : Assistant Multimodal Bienveillant pour Jeunes Autistes
 
-Complice — Un compagnon pour compressentir et prendre confiance
+## Complice — Un compagnon pour compressentir et prendre confiance
 
-Ce projet vise à créer un assistant conversationnel intelligent, combinant:
 
-- 🔍 **Recherche intelligente** : L'utilisateur peut poser des questions sur l'autisme, les émotions, les relations sociales…
-- 💬 **Chat bienveillant** : Dialogue rassurant, adapté au niveau de compréhension
-- 🖼️ **Images émotionnelles** : Génération de visages exprimant des émotions (joie, colère, tristesse, etc.)
-- 🎯 **Quiz interactifs** : 23 scénarios d'apprentissage pour développer les habiletés sociales
+Ce projet vise à créer un assistant conversationnel intelligent en combinant les suivants modules:
+
+- 💬 **Chat bienveillant** : Dialogue rassurant, adapté au niveau de compréhension; l'utilisateur peut poser des questions sur l'autisme, les émotions, les relations sociales…
+- 🌈 **Exploration émotionnelle** : Exploration des émotions avec génération d'images de visages exprimant des émotions (joie, colère, tristesse, etc.)
+- 🧩 **Quiz interactifs sur les  habiletés sociales** : 23 scénarios d'apprentissage pour développer les habiletés sociales
 - 🛡️ **Sécurité & éthique** : Filtrage des réponses, personnalisation du ton et du niveau de difficulté intelligent, combinant :
 
 ## 🧠 Objectif du projet
@@ -18,8 +18,7 @@ L’objectif est de proposer un outil accessible, rassurant et éducatif pour le
 
 ## ✅ **Fonctionnalités réalisées et opérationnelles**
 
-- 🔍 **Recherche intelligente** : RAG basé sur une bibliothèque documentaire sur l'autisme, émotions et habiletés sociales
-- 💬 **Module dialogue bienveillant** : Chat empathique avec prompts contextualisés et accueil chaleureux
+- 🔍 **Recherche intelligente** : RAG basé sur une bibliothèque documentaire sur l'autisme, émotions et habiletés sociales avec chat empathique avec prompts contextualisés et accueil chaleureux
 - 🌈 **Module exploration émotionnelle** : 
   - 12 émotions avec descriptions pédagogiques
   - Génération d'images DALL-E personnalisées (âge, lieu, moment)
