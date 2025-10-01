@@ -44,28 +44,28 @@ L’objectif est de proposer un outil accessible, rassurant et éducatif pour le
 ## 🗂️ Structure du projet
 
     complice/
-        ├── data/                  # Textes extraits, chunks, embeddings, index FAISS
+        ├── data/                   # Textes extraits, chunks, embeddings, index FAISS
         │   ├── pdf_books/          # (non versionné) PDF sources originaux
-        │   ├── extracted_texts/   # (non versionné) textes extraits
+        │   ├── extracted_texts/    # (non versionné) textes extraits
         │   ├── ready_for_embedding/  # chunks, chunks avec metadonnées    
-        │   └── embeddings/         # fichiers .npy, .pkl, .idx, vectorstore FAISS
-        ├── notebooks/             # Notebooks 01 à 05 (pipeline RAG)
-        │   ├── 01_extraction.ipynb # extraction des textes
-        │   ├── 02_chunking_metadata.ipynb # découpage + annotation
-        │   ├── 03_embeddings.ipynb # génération des vecteurs
-        │   ├── 04_indexation_faiss.ipynb # création du vectorstore (.faiss + .pkl)   
-        │   ├── 05_rag_pipeline.ipynb # requêtes RAG avec GPT-4o
-        │   ├── 06_validation_rag.ipynb # boucle de questions test et évaluation RAGAS
-        │   └── 07_generate_quiz.ipynb # génération automatisée de quiz avec GPT-4o
-        ├── interface/             # 🎉 Interface Streamlit complète et fonctionnelle
-        │   ├── app.py              # Interface principale avec 4 modules complets
-        │   ├── rag_module.py       # Pipeline RAG avec prompts bienveillants
-        │   ├── image_module.py     # Génération d'images DALL-E personnalisées
-        │   ├── quiz_module.py      # Système de quiz interactifs pour habiletés sociales
-        │   ├── data/               # Données des quiz (23 scenarios d'apprentissage)
+        │   └── embeddings/           # fichiers .npy, .pkl, .idx, vectorstore FAISS
+        ├── notebooks/              # Notebooks 01 à 05 (pipeline RAG)
+        │   ├── 01_extraction.ipynb         # extraction des textes
+        │   ├── 02_chunking_metadata.ipynb  # découpage + annotation
+        │   ├── 03_embeddings.ipynb         # génération des vecteurs
+        │   ├── 04_indexation_faiss.ipynb   # création du vectorstore (.faiss + .pkl)   
+        │   ├── 05_rag_pipeline.ipynb       # requêtes RAG avec GPT-4o
+        │   ├── 06_validation_rag.ipynb     # boucle de questions test et évaluation RAGAS
+        │   └── 07_generate_quiz.ipynb      # génération automatisée de quiz avec GPT-4o
+        ├── interface/                      # Interface Streamlit complète et fonctionnelle
+        │   ├── app.py                      # Interface principale avec 4 modules complets
+        │   ├── rag_module.py               # Pipeline RAG avec prompts bienveillants
+        │   ├── image_module.py             # Génération d'images DALL-E personnalisées
+        │   ├── quiz_module.py              # Système de quiz interactifs pour habiletés sociales
+        │   ├── data/                       # Données des quiz (23 scenarios d'apprentissage)
         │   │   ├── quiz_complets_melanges_corriges.json
         │   │   └── quiz_test.json
-        │   └── venv/               # Environnement virtuel Python configuré
+        │   └── venv/                       # Environnement virtuel Python configuré
         │
         ├── .gitignore                   # Fichiers à exclure du suivi Git
         ├── .dockerignore               # Fichiers à exclure du conteneur Docker
@@ -160,36 +160,7 @@ Ouvrez votre navigateur sur : http://localhost:8888
 bash   # Appuyez sur Ctrl+C dans le terminal, puis :
         docker-compose down
 
-# 📘 Notebooks principaux
 
-Une fois JupyterLab ouvert, explorez les notebooks dans l'ordre :
-
-    - 03_embeddings.ipynb🔤 Génération des vecteurs d'embedding
-    - 04_indexation_faiss.ipynb🗃️ Création du vectorstore FAISS
-    - 05_rag_pipeline.ipynb🤖 Pipeline RAG
-
-📚 Enrichissement de la base documentaire (optionnel)
-
-Pour ajouter de nouveaux documents PDF à la base de connaissances :
-    - 01_extraction.ipynb📄 Extraction de texte depuis les PDF
-    - 02_chunking_metadata.ipynb✂️ Découpage et annotation des documents
-
-🛠️ Commandes utiles
-bash# Reconstruire après modification du Dockerfile/requirements
-
-docker-compose up --build --force-recreate
-
-# Lancer en arrière-plan
-docker-compose up -d
-
-# Voir les logs
-docker-compose logs -f
-
-# Accéder au shell du conteneur (debug)
-docker-compose exec jupyter-dev bash
-
-# Installer un nouveau package temporairement
-docker-compose exec jupyter-dev pip install nom-du-package
 
 # 🚀 Interface Streamlit (opérationnelle en local)
 
@@ -242,33 +213,16 @@ streamlit run app.py
 - Génération d'images DALL-E 3 contextualisées
 - Discussion empathique sur l'émotion explorée
 
-### 🎯 Module "Quiz avec Complice"
+### 🎯 Module "Quiz habiletés sociales avec Complice"
 - **23 scénarios d'apprentissage** couvrant diverses situations sociales :
   - 🏫 Situations scolaires (interactions en classe, récréation, cantine)
   - 👨‍👩‍👧‍👦 Contextes familiaux (repas, sorties, discussions)
   - 🎭 Interactions sociales (amitié, conflits, événements)
   - 🌍 Situations publiques (transports, commerces, loisirs)
-- **Questions à choix multiples** avec 4 options par scénario
+- **Questions à choix multiples** avec 3 options par scénario
 - **Feedback constructif** : explications bienveillantes pour chaque réponse
 - **Apprentissage progressif** : découverte de nouvelles stratégies sociales
 - **Interface intuitive** : navigation simple et encourageante
-
-🐛 Problèmes courants
-Docker n'arrive pas à se connecter ?
-
-Vérifiez que Docker Desktop est lancé
-Sur Windows : redémarrez Docker Desktop
-
-Erreur de permissions ?
-
-bash# Sur Linux/Mac, ajoutez votre utilisateur au groupe docker :
-sudo usermod -aG docker $USER
-Puis redémarrez votre session
-
-Port 8888 déjà utilisé ?
-bash# Modifiez le port dans docker-compose.yml :
-ports:
-  - "8889:8888"  # Utilisez 8889 à la place
 
 ---
 ## 🤝 Contribuer
