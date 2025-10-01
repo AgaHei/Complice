@@ -1,6 +1,6 @@
 # 🤗 COMPLICE : Assistant Multimodal Bienveillant pour Jeunes Autistes
 
-## Complice — Un compagnon pour compressentir et prendre confiance
+## Complice — Un compagnon pour comprendre, ressentir et prendre confiance
 
 
 Ce projet vise à créer un assistant conversationnel intelligent en combinant les suivants modules:
