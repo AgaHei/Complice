@@ -30,7 +30,7 @@ def render_dialogue_module():
 def render_emotion_module():
     st.header("🌈 Explorer les émotions avec Complice")
     
-    # Dictionnaire des émotions
+    # Dictionnaire des émotions (24 émotions)
     emotions = {
         "😊 Joie": "Un sentiment de bonheur et de satisfaction",
         "😢 Tristesse": "Un sentiment de peine ou de mélancolie",
@@ -43,7 +43,19 @@ def render_emotion_module():
         "😰 Stress": "Un sentiment de tension ou de pression",
         "🤔 Confusion": "Un sentiment d'incertitude ou de perplexité",
         "😌 Sérénité": "Un sentiment de calme et de paix",
-        "😖 Overwhelm": "Un sentiment d'être dépassé par les événements"
+        "😖 Overwhelm": "Un sentiment d'être dépassé par les événements",
+        "🎉 Excitation": "Un sentiment d'enthousiasme et d'impatience positive",
+        "😳 Embarras": "Un sentiment de gêne ou de malaise social",
+        "🥱 Ennui": "Un sentiment de lassitude par manque de stimulation",
+        "😤 Impatience": "Un sentiment d'agacement face à l'attente",
+        "🤨 Scepticisme": "Un sentiment de doute ou de méfiance",
+        "😇 Fierté": "Un sentiment de satisfaction de ses accomplissements",
+        "🙄 Agacement": "Un sentiment d'irritation légère et répétée",
+        "😵 Stupéfaction": "Un sentiment de surprise intense et de choc",
+        "🤐 Retenue": "Un sentiment de se retenir d'exprimer ses émotions",
+        "😅 Nervosité": "Un sentiment d'anxiété mêlée d'excitation",
+        "🥺 Vulnérabilité": "Un sentiment de fragilité et de besoin de protection",
+        "🤩 Admiration": "Un sentiment d'émerveillement et de respect"
     }
     
     # Sélection de l'émotion
@@ -268,7 +280,7 @@ def render_quiz_module():
     if st.session_state.current_quiz:
         quiz = quiz_manager.format_quiz_for_display(st.session_state.current_quiz)
         
-        # Contexte
+        # Affichage de la situation
         st.subheader("📖 Situation")
         st.write(quiz["contexte"])
         
