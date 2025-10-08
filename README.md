@@ -64,7 +64,7 @@ L’objectif est de proposer un outil accessible, rassurant et éducatif pour le
         │   ├── rag_module.py               # Pipeline RAG avec prompts bienveillants
         │   ├── image_module.py             # Génération d'images DALL-E personnalisées
         │   ├── quiz_module.py              # Système de quiz interactifs pour habiletés sociales
-        │   ├── data/                       # Données des quiz (23 scenarios d'apprentissage)
+        │   ├── data/                       # Données des quiz (30 scenarios d'apprentissage)
         │   │   ├── quiz_complets_melanges_corriges.json
         │   │   └── quiz_test.json
         │   └── venv/                       # Environnement virtuel Python configuré
@@ -85,9 +85,9 @@ L’objectif est de proposer un outil accessible, rassurant et éducatif pour le
 - pandas, numpy, tqdm : manipulation et nettoyage des données
 
 #### 🧠 Recherche sémantique & génération
-- LangChain : orchestration du pipeline RAG
-- FAISS : base vectorielle pour la recherche (4988 documents indexés)
-- OpenAI Embeddings : text-embedding-3-small pour vecteurs multilingues
+- LangChain : orchestration du pipeline RAG avec langchain-huggingface
+- FAISS : base vectorielle pour la recherche (6,346 documents indexés)
+- HuggingFace Sentence Transformers : embeddings multilingues optimisés
 - OpenAI GPT-4o : génération de réponses bienveillantes avec prompts contextualisés
 - OpenAI DALL-E 3 : génération d'images émotionnelles personnalisées
 
@@ -215,7 +215,7 @@ streamlit run app.py
 - Discussion empathique sur l'émotion explorée
 
 ### 🎯 Module "Quiz habiletés sociales avec Complice"
-- **23 scénarios d'apprentissage** couvrant diverses situations sociales :
+- **30 scénarios d'apprentissage** couvrant diverses situations sociales :
   - 🏫 Situations scolaires (interactions en classe, récréation, cantine)
   - 👨‍👩‍👧‍👦 Contextes familiaux (repas, sorties, discussions)
   - 🎭 Interactions sociales (amitié, conflits, événements)
