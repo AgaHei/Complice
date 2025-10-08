@@ -7,7 +7,7 @@ Ce projet vise à créer un assistant conversationnel intelligent en combinant l
 
 - 💬 **Chat bienveillant** : Dialogue rassurant, adapté au niveau de compréhension; l'utilisateur peut poser des questions sur l'autisme, les émotions, les relations sociales…
 - 🌈 **Exploration émotionnelle** : Exploration des émotions avec génération d'images de visages exprimant des émotions (joie, colère, tristesse, etc.)
-- 🧩 **Quiz interactifs sur les  habiletés sociales** : 23 scénarios d'apprentissage pour développer les habiletés sociales
+- 🧩 **Quiz interactifs sur les  habiletés sociales** : 30 scénarios d'apprentissage pour développer les habiletés sociales
 - 🛡️ **Sécurité & éthique** : Filtrage des réponses, personnalisation du ton et du niveau de difficulté intelligent, combinant :
 
 ## 🧠 Objectif du projet
@@ -20,13 +20,13 @@ L’objectif est de proposer un outil accessible, rassurant et éducatif pour le
 
 - 🔍 **Recherche intelligente** : RAG basé sur une bibliothèque documentaire sur l'autisme, émotions et habiletés sociales avec chat empathique avec prompts contextualisés et accueil chaleureux
 - 🌈 **Module exploration émotionnelle** : 
-  - 12 émotions avec descriptions pédagogiques
+  - 30 émotions avec descriptions pédagogiques
   - Génération d'images DALL-E personnalisées (âge, lieu, moment de la journée)
   - Sélecteur de personnage inclusif ("personne à visualiser")
   - Discussion empathique sur les émotions ressenties
   - Génération DALL-E 3 avec paramètres personnalisables
 - 🧩 **Module Quiz interactifs** : 
-  - 23 scénarios d'apprentissage pour développer les habiletés sociales
+  - 30 scénarios d'apprentissage pour développer les habiletés sociales
   - Discussion empathique sur les choix des réponses
 - 🛡️ **Sécurité & éthique** : Prompts bienveillants, ton adapté aux adolescents autistes
 
