@@ -205,7 +205,7 @@ streamlit run app.py
 - Prompts adaptés aux adolescents autistes
 
 ### 🌈 Module "Explorer les émotions avec Complice"  
-- Sélection parmi 12 émotions avec descriptions
+- Sélection parmi 30 émotions avec descriptions
 - Paramétrage personnalisé :
   - 🎂 Âge (5-80 ans)
   - 📍 Lieu (école, parc, plage, etc.)
