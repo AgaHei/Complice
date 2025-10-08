@@ -1,10 +1,10 @@
 {
   "metadata": {
-    "total_quiz": 23,
-    "genere_le": "2025-10-01",
+    "total_quiz": 30,
+    "genere_le": "2025-10-08",
     "projet": "Complice - Quiz habiletés sociales",
-    "version": "finale_melange_corrige",
-    "description": "Quiz avec réponses vraiment mélangées + quiz cantine intégré"
+    "version": "finale_30_quiz",
+    "description": "30 quiz alignés sur les 30 émotions disponibles"
   },
   "quiz": [
     {
@@ -259,6 +259,83 @@
       },
       "bonne_reponse": "B",
       "commentaire": "Demander poliment avant de s'asseoir montre du respect pour l'espace de l'autre personne et ouvre la possibilité d'une interaction positive. Cela permet aussi à l'autre personne de te répondre et de créer un échange amical."
+    },
+    {
+      "contexte": "Lors d'une sortie entre amis, tu remarques qu'un ami fait constamment des blagues sarcastiques qui blessent les autres membres du groupe.",
+      "question": "Que fais-tu dans cette situation ?",
+      "options": {
+        "A": "Tu lui parles en privé pour lui expliquer que ses blagues peuvent blesser les autres.",
+        "B": "Tu fais des blagues sarcastiques à ton tour pour lui montrer ce que ça fait.",
+        "C": "Tu ignores complètement ses blagues et espères qu'il s'arrêtera de lui-même."
+      },
+      "bonne_reponse": "A",
+      "commentaire": "Parler en privé permet d'aborder le problème sans embarrasser ton ami devant le groupe. Cela lui donne la chance de comprendre l'impact de ses paroles et de changer son comportement de manière respectueuse."
+    },
+    {
+      "contexte": "Tu arrives à une fête d'anniversaire et tu ne connais personne à part la personne qui fête son anniversaire, qui est occupée avec d'autres invités.",
+      "question": "Que fais-tu dans cette situation ?",
+      "options": {
+        "A": "Tu restes dans un coin en attendant que quelqu'un vienne te parler.",
+        "B": "Tu t'approches d'un petit groupe et tu te présentes poliment.",
+        "C": "Tu pars immédiatement car tu te sens mal à l'aise."
+      },
+      "bonne_reponse": "B",
+      "commentaire": "Se présenter poliment à un petit groupe est une excellente façon de briser la glace. La plupart des gens apprécient les nouvelles personnes qui font l'effort de se joindre à eux de manière respectueuse."
+    },
+    {
+      "contexte": "Un ami te demande de lui prêter de l'argent pour la troisième fois ce mois, mais il n'a jamais remboursé les fois précédentes.",
+      "question": "Que fais-tu dans cette situation ?",
+      "options": {
+        "A": "Tu lui prêtes encore de l'argent pour éviter un conflit.",
+        "B": "Tu refuses poliment en expliquant que tu aimerais d'abord être remboursé(e) des prêts précédents.",
+        "C": "Tu lui cries dessus pour lui dire qu'il profite de toi."
+      },
+      "bonne_reponse": "B",
+      "commentaire": "Il est important de fixer des limites saines dans les amitiés. Refuser poliment tout en expliquant tes attentes montre que tu te respectes tout en préservant la relation d'amitié."
+    },
+    {
+      "contexte": "Tu es en cours d'éducation physique et tu es le dernier à être choisi pour former les équipes. Tu te sens embarrassé(e).",
+      "question": "Que fais-tu dans cette situation ?",
+      "options": {
+        "A": "Tu fais de ton mieux pendant le jeu pour contribuer positivement à ton équipe.",
+        "B": "Tu restes en retrait et évites de participer activement.",
+        "C": "Tu exprimes ta frustration en critiquant les autres joueurs."
+      },
+      "bonne_reponse": "A",
+      "commentaire": "Participer activement malgré l'embarras montre ta résilience et ton esprit sportif. Cela peut également changer l'opinion des autres sur tes capacités et créer des opportunités d'être choisi(e) plus tôt la prochaine fois."
+    },
+    {
+      "contexte": "Tu es dans un magasin et tu remarques qu'une personne âgée a de la difficulté à atteindre un produit sur une étagère haute.",
+      "question": "Que fais-tu dans cette situation ?",
+      "options": {
+        "A": "Tu continues tes courses sans intervenir pour ne pas la déranger.",
+        "B": "Tu t'approches et proposes poliment ton aide.",
+        "C": "Tu attrapes le produit et le lui donnes sans demander."
+      },
+      "bonne_reponse": "B",
+      "commentaire": "Offrir poliment son aide respecte l'autonomie de la personne tout en montrant de la bienveillance. Cela lui permet d'accepter ou de refuser selon ses besoins, ce qui préserve sa dignité."
+    },
+    {
+      "contexte": "Pendant une discussion de groupe en classe, tu as une opinion différente de celle exprimée par la majorité des élèves.",
+      "question": "Que fais-tu dans cette situation ?",
+      "options": {
+        "A": "Tu exprimes ton opinion différente de manière respectueuse en expliquant tes raisons.",
+        "B": "Tu gardes ton opinion pour toi pour éviter le conflit.",
+        "C": "Tu changes d'avis publiquement pour être accepté(e) par le groupe."
+      },
+      "bonne_reponse": "A",
+      "commentaire": "Exprimer respectueusement une opinion différente enrichit la discussion et montre que tu penses de manière indépendante. Cela peut même aider les autres à voir les choses sous un nouveau jour."
+    },
+    {
+      "contexte": "Tu reçois un cadeau d'anniversaire de ta grand-mère, mais ce n'est vraiment pas ton style et tu n'en as pas besoin.",
+      "question": "Que fais-tu dans cette situation ?",
+      "options": {
+        "A": "Tu la remercies chaleureusement et montres de la gratitude pour son geste attentionné.",
+        "B": "Tu lui dis directement que le cadeau ne te plaît pas.",
+        "C": "Tu acceptes le cadeau sans dire merci car tu n'en veux pas vraiment."
+      },
+      "bonne_reponse": "A",
+      "commentaire": "L'important n'est pas le cadeau lui-même, mais l'intention et l'amour derrière le geste. Montrer de la gratitude préserve les sentiments de ta grand-mère et renforce votre relation."
     }
   ]
 }

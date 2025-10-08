@@ -22,7 +22,7 @@ def render_dialogue_module():
     # Question avec texte plus grand
     st.markdown("### 🌟 Quelle question voudrais-tu me poser aujourd'hui ?")
     
-    user_input = st.text_input("", placeholder="Tape ta question ici...")
+    user_input = st.text_input("Ta question", placeholder="Tape ta question ici...", label_visibility="collapsed")
     if user_input:
         response = query_rag(user_input, mode="dialogue")
         st.success(response)
@@ -30,7 +30,7 @@ def render_dialogue_module():
 def render_emotion_module():
     st.header("🌈 Explorer les émotions avec Complice")
     
-    # Dictionnaire des émotions (24 émotions)
+    # Dictionnaire des émotions (30 émotions)
     emotions = {
         "😊 Joie": "Un sentiment de bonheur et de satisfaction",
         "😢 Tristesse": "Un sentiment de peine ou de mélancolie",
@@ -55,7 +55,13 @@ def render_emotion_module():
         "🤐 Retenue": "Un sentiment de se retenir d'exprimer ses émotions",
         "😅 Nervosité": "Un sentiment d'anxiété mêlée d'excitation",
         "🥺 Vulnérabilité": "Un sentiment de fragilité et de besoin de protection",
-        "🤩 Admiration": "Un sentiment d'émerveillement et de respect"
+        "🤩 Admiration": "Un sentiment d'émerveillement et de respect",
+        "😏 Sarcasme": "Un sentiment d'ironie mordante ou de moquerie subtile",
+        "🙃 Ironie": "Un sentiment d'amusement face aux contradictions de la situation",
+        "🤷 Hésitation": "Un sentiment d'incertitude face à une décision à prendre",
+        "😒 Jalousie": "Un sentiment d'envie face au bonheur ou aux possessions d'autrui",
+        "😊 Satisfaction": "Un sentiment de contentement et d'accomplissement",
+        "💕 Amour": "Un sentiment d'affection profonde et de connexion émotionnelle"
     }
     
     # Sélection de l'émotion
@@ -68,13 +74,6 @@ def render_emotion_module():
     # Affichage de la description
     if selected_emotion:
         st.write(f"**{selected_emotion}** : {emotions[selected_emotion]}")
-    
-    # Zone de texte pour décrire l'émotion
-    emotion_description = st.text_area(
-        "Peux-tu me décrire ce que tu ressens ? (optionnel)",
-        placeholder="Décris ton émotion avec tes propres mots...",
-        height=100
-    )
     
     # Sélecteur de personnage avec formulation inclusive
     personnage = st.radio(
@@ -119,7 +118,7 @@ def render_emotion_module():
                     emotion_name = selected_emotion.split(' ', 1)[1]  # Enlever l'emoji
                     
                     # Génération de l'image
-                    image_url = generate_emotion_image(emotion_name, emotion_description, personnage, age, lieu, moment)
+                    image_url = generate_emotion_image(emotion_name, "", personnage, age, lieu, moment)
                     
                     if image_url:
                         st.success("🎉 Ton image est prête !")
@@ -134,22 +133,10 @@ def render_emotion_module():
                         
                         # Construction du contexte pour la discussion
                         context_text = f"Je ressens {emotion_name}"
-                        if emotion_description:
-                            context_text += f" : {emotion_description}"
                         
                         # Génération de la réponse empathique
                         emotion_response = query_rag(context_text, mode="emotion")
                         st.info(emotion_response)
-                        
-                        # Zone pour continuer la discussion
-                        follow_up = st.text_input(
-                            "Veux-tu en parler davantage ?",
-                            placeholder="Partage tes pensées..."
-                        )
-                        
-                        if follow_up:
-                            follow_response = query_rag(follow_up, mode="emotion")
-                            st.success(follow_response)
                     
                     else:
                         st.error("❌ Impossible de générer l'image. Réessaye plus tard.")
@@ -347,35 +334,23 @@ def render_quiz_module():
             discussion_context = f"Je viens de répondre à un quiz sur cette situation : {quiz['contexte']}. {quiz['explanation']}"
             discussion_response = query_rag(discussion_context, mode="dialogue")
             st.write(discussion_response)
-            
-            # Zone pour poser des questions sur le quiz
-            follow_up_question = st.text_input(
-                "As-tu des questions sur cette situation ?",
-                placeholder="Demande des conseils à Complice..."
-            )
-            
-            if follow_up_question:
-                context_with_question = f"À propos de cette situation sociale : {quiz['contexte']}. {follow_up_question}"
-                follow_response = query_rag(context_with_question, mode="dialogue")
-                st.success(follow_response)
     
     else:
         st.write("👆 Clique sur 'Nouveau quiz aléatoire' pour commencer !")
         
-        # Aperçu des statistiques
+        # Message d'encouragement
         if stats['total'] > 0:
-            st.subheader("📈 Aperçu des quiz")
-            col1, col2, col3, col4 = st.columns(4)
+            st.info("""
+            💪 **Pourquoi s'entraîner aux habiletés sociales ?**
             
-            distribution = stats['answer_distribution']
-            with col1:
-                st.metric("Réponses A", distribution.get('A', 0))
-            with col2:
-                st.metric("Réponses B", distribution.get('B', 0))
-            with col3:
-                st.metric("Réponses C", distribution.get('C', 0))
-            with col4:
-                st.metric("Réponses D", distribution.get('D', 0))
+            Pratiquer ces scénarios t'aide à :
+            • 🧠 Développer tes réflexes sociaux
+            • 🎯 Mieux comprendre les situations du quotidien  
+            • 🤝 Améliorer tes interactions avec les autres
+            • ✨ Gagner en confiance dans la vraie vie
+            
+            *Chaque quiz est une occasion d'apprendre !* 🌟
+            """ )
 
 st.sidebar.title("🤗 Complice")
 # Ajouter un espace pour aligner avec le message d'accueil
@@ -394,7 +369,7 @@ st.sidebar.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-module = st.sidebar.radio("Choisis une activite :", [
+selected_module = st.sidebar.radio("Choisis une activite :", [
     "🏠 À propos",
     "💬 Discuter avec Complice", 
     "🌈 Explorer les émotions avec Complice",
@@ -404,11 +379,11 @@ module = st.sidebar.radio("Choisis une activite :", [
 # Ajouter des espaces visuels dans la sidebar
 st.sidebar.markdown("---")
 
-if module == "🏠 À propos":
+if selected_module == "🏠 À propos":
     render_about_page()
-elif module == "💬 Discuter avec Complice":
+elif selected_module == "💬 Discuter avec Complice":
     render_dialogue_module()
-elif module == "🌈 Explorer les émotions avec Complice":
+elif selected_module == "🌈 Explorer les émotions avec Complice":
     render_emotion_module()
-elif module == "🧩 Quiz habiletés sociales":
+elif selected_module == "🧩 Quiz habiletés sociales":
     render_quiz_module()
