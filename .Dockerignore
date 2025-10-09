@@ -5,5 +5,11 @@ data/extracted_texts/
 # Fichiers sensibles ou locaux
 .env
 .venv/
+venv/
 __pycache__/
 *.pyc
+
+# Fichiers de test et temporaires
+test_*.py
+simple_*.py
+*_backup.py

@@ -9,8 +9,8 @@ from langchain_community.vectorstores import FAISS
 from langchain_huggingface import HuggingFaceEmbeddings  
 
 # 🔐 Charger la clé API depuis .env
-# Spécifier le chemin vers le fichier .env dans le dossier parent
-env_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", ".env")
+# Dans Docker, le fichier .env est dans le même répertoire que les modules Python
+env_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), ".env")
 load_dotenv(env_path)
 openai_api_key = os.getenv("OPENAI_API_KEY")
 
@@ -21,7 +21,10 @@ def load_vector_db(index_path=None):
     if index_path is None:
         import os
         current_dir = os.path.dirname(os.path.abspath(__file__))
-        index_path = os.path.join(current_dir, "..", "data", "embeddings", "faiss_store")
+        # Dans Docker, nous sommes dans /home/jovyan/work/interface/
+        # Donc data/ (embeddings) est dans le parent /home/jovyan/work/data/
+        parent_dir = os.path.dirname(current_dir)
+        index_path = os.path.join(parent_dir, "data", "embeddings", "faiss_store")
     
     try:
         # Utiliser les embeddings OpenAI (1536 dimensions)
