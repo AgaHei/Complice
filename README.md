@@ -66,8 +66,8 @@ L’objectif est de proposer un outil accessible, rassurant et éducatif pour le
         │   ├── quiz_module.py              # Système de quiz interactifs pour habiletés sociales
         │   ├── data/                       # Données des quiz (30 scenarios d'apprentissage)
         │   │   ├── quiz_complets_melanges_corriges.json
-        │   │   └── quiz_test.json
-        │   └── venv/                       # Environnement virtuel Python configuré
+        │   └── └── quiz_test.json
+        │  
         │
         ├── .gitignore                   # Fichiers à exclure du suivi Git
         ├── .dockerignore               # Fichiers à exclure du conteneur Docker
