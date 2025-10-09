@@ -58,15 +58,15 @@ L’objectif est de proposer un outil accessible, rassurant et éducatif pour le
         │   ├── 04_indexation_faiss.ipynb   # création du vectorstore (.faiss + .pkl)   
         │   ├── 05_rag_pipeline.ipynb       # requêtes RAG avec GPT-4o
         │   ├── 06_validation_rag.ipynb     # boucle de questions test et évaluation RAGAS
-        │   └── 07_generate_quiz.ipynb      # génération automatisée de quiz avec GPT-4o
+        │   ├── 07_generate_quiz.ipynb      # génération automatisée de quiz avec GPT-4o
+        │   └── generated_quizes/           # Données des quiz (scénarios sociaux)
         ├── interface/                      # Interface Streamlit complète et fonctionnelle
         │   ├── app.py                      # Interface principale avec 4 modules complets
         │   ├── rag_module.py               # Pipeline RAG avec prompts bienveillants
         │   ├── image_module.py             # Génération d'images DALL-E personnalisées
         │   ├── quiz_module.py              # Système de quiz interactifs pour habiletés sociales
         │   ├── data/                       # Données des quiz (30 scenarios d'apprentissage)
-        │   │   ├── quiz_complets_melanges_corriges.json
-        │   └── └── quiz_test.json
+        │   └── └── quiz_complets_melanges_corriges.json
         │  
         │
         ├── .gitignore                   # Fichiers à exclure du suivi Git
