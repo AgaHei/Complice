@@ -67,11 +67,11 @@ L’objectif est de proposer un outil accessible, rassurant et éducatif pour le
         │   ├── quiz_module.py              # Système de quiz interactifs pour habiletés sociales
         │   ├── data/                       # Données des quiz (30 scenarios d'apprentissage)
         │   └── └── quiz_complets_melanges_corriges.json
-        │  
         │
         ├── .gitignore                   # Fichiers à exclure du suivi Git
         ├── .dockerignore               # Fichiers à exclure du conteneur Docker
         ├── Dockerfile                  # Image Docker pour environnement Jupyter
+        ├── docker-compose.yml          # Orchestrateur Docker (JupyterLab + Streamlit + volumes)
         ├── requirements.txt            # Dépendances Python du projet
         ├── GUIDE_COEQUIPIERS.md        # Explication concernant le démarrage du conteneur
         └── README.md                   # Présentation et documentation du projet
