@@ -59,7 +59,7 @@ L’objectif est de proposer un outil accessible, rassurant et éducatif pour le
         │   ├── 05_rag_pipeline.ipynb       # requêtes RAG avec GPT-4o
         │   ├── 06_validation_rag.ipynb     # boucle de questions test et évaluation RAGAS
         │   ├── 07_generate_quiz.ipynb      # génération automatisée de quiz avec GPT-4o
-        │   └── generated_quizes/           # Données des quiz (scénarios sociaux)
+        │   └── generated_quizzes/           # Données des quiz (scénarios sociaux)
         ├── interface/                      # Interface Streamlit complète et fonctionnelle
         │   ├── app.py                      # Interface principale avec 4 modules complets
         │   ├── rag_module.py               # Pipeline RAG avec prompts bienveillants
