@@ -73,6 +73,7 @@ L’objectif est de proposer un outil accessible, rassurant et éducatif pour le
         ├── .dockerignore               # Fichiers à exclure du conteneur Docker
         ├── Dockerfile                  # Image Docker pour environnement Jupyter
         ├── requirements.txt            # Dépendances Python du projet
+        ├── GUIDE_COEQUIPIERS.md        # Explication concernant le démarrage du conteneur
         └── README.md                   # Présentation et documentation du projet
 
 
