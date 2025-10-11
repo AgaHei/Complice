@@ -86,9 +86,9 @@ L’objectif est de proposer un outil accessible, rassurant et éducatif pour le
 - pandas, numpy, tqdm : manipulation et nettoyage des données
 
 #### 🧠 Recherche sémantique & génération
-- LangChain : orchestration du pipeline RAG avec langchain-huggingface
+- LangChain : orchestration du pipeline RAG avec langchain-openai
 - FAISS : base vectorielle pour la recherche (6,346 documents indexés)
-- HuggingFace Sentence Transformers : embeddings multilingues optimisés
+- OpenAI text-embedding-3-small : embeddings haute qualité multilingues (1536 dimensions)
 - OpenAI GPT-4o : génération de réponses bienveillantes avec prompts contextualisés
 - OpenAI DALL-E 3 : génération d'images émotionnelles personnalisées
 
