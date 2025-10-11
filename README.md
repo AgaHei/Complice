@@ -1,4 +1,4 @@
-# 🤗 COMPLICE : Assistant Multimodal Bienveillant pour Jeunes Autistes
+# COMPLICE : Assistant Multimodal Bienveillant pour Jeunes Autistes
 
 ## Complice — Un compagnon pour comprendre, ressentir et prendre confiance
 

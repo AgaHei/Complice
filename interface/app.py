@@ -149,80 +149,69 @@ def render_emotion_module():
 def render_about_page():
     """Page d'accueil et présentation de Complice"""
     
-    # En-tête principal
-    st.title("🤗 Bienvenue chez Complice")
+    # En-tête principal avec mascotte
+    col1, col2 = st.columns([1, 4])
     
-    # Saut de ligne après le titre
-    st.markdown("<br>", unsafe_allow_html=True)
+    with col1:
+        # Affichage de la mascotte
+        try:
+            st.image("./assets/mascotte_complice.png", width=120)
+        except:
+            try:
+                # Essayer avec le chemin absolu dans le conteneur
+                st.image("/home/jovyan/work/interface/assets/mascotte_complice.png", width=120)
+            except:
+                # Fallback si l'image n'est pas trouvée
+                st.markdown("🤗")
     
-    # Message d'accueil personnalisé - taille intermédiaire
+    with col2:
+        st.title("Bienvenue chez Complice")
+    
+    # Message d'accueil personnalisé - agrandi
     st.markdown("""
-    ### 👋 **Salut ! Je suis ravi de te retrouver ici !**
-    
-    ### Tu es dans un espace qui t'appartient, conçu spécialement pour t'accompagner avec bienveillance. 
+    ##  Salut ! Je suis ravi de te retrouver ici !  👋
+    ### Tu es dans un espace qui t'appartient, conçu spécialement pour t'accompagner avec bienveillance.  
     ### Prends le temps de découvrir ce que je peux t'offrir ! ✨
     """)
     
-    # Séparateur simple
-    st.markdown("---")
+    # Séparateur
+    st.markdown("________________________________________")
     
-    # Section À propos
-    st.markdown("""
-    ## 🤗 À propos de Complice
-
-    Complice est un assistant bienveillant conçu pour accompagner les adolescents autistes dans l'exploration de leurs émotions et le développement de leurs habiletés sociales.
-
-    🌈 **Pourquoi Complice ?**  
-    Parce que chacun mérite un espace doux, rassurant et respectueux pour mieux se comprendre et interagir avec les autres.
-
-    💬 **Ce que tu peux faire ici :**
-    - Discuter avec Complice pour explorer tes ressentis
-    - Découvrir des émotions à travers des images et des mots simples
-    - T'entraîner à réagir dans des situations sociales grâce à des quiz adaptés
-
-    🧠 **Un ton chaleureux et sans jugement**  
-    Complice ne donne pas de leçons. Il propose des pistes, pose des questions, et t'encourage à réfléchir à ton rythme.
-
-    🐣 **Pour qui ?**  
-    Pour tous les jeunes qui veulent mieux comprendre leurs émotions et leurs relations, en particulier ceux qui ont besoin d'un cadre rassurant et clair.
-    """)
+    # Section Comment naviguer
+    st.markdown("## 🧭 **Comment naviguer ?**")
     
-    # Section navigation
-    st.markdown("---")
-    st.subheader("🧭 Comment naviguer ?")
-    
+    # Colonnes pour disposition horizontale
     col1, col2, col3 = st.columns(3)
     
     with col1:
         st.markdown("""
-        ### 💬 Discuter
+        ### 💬 Discuter  
         Pour poser tes questions et explorer tes ressentis avec Complice
         """)
     
     with col2:
         st.markdown("""
-        ### 🌈 Émotions
+        ### 🌈 Explorer les émotions  
         Pour créer des images qui représentent ce que tu ressens
         """)
     
     with col3:
         st.markdown("""
-        ### 🧩 Quiz
+        ### 🧩 Tester tes habiletés sociales  
         Pour t'entraîner sur des situations sociales du quotidien
         """)
     
+    # Séparateur
+    st.markdown("________________________________________")
+    
     # Call-to-action
-    st.markdown("---")
     st.markdown("""
-    ### 🚀 Prêt à commencer ?
-    
-    Utilise le menu dans la barre latérale pour choisir l'activité qui te fait envie ! 
-    
+    ## 🚀 **Prêt à commencer ?**  
+    Utilise le menu dans la barre latérale pour choisir l'activité qui te fait envie !  
     N'hésite pas à explorer, il n'y a pas de mauvaise façon de faire. 😊
-    """)
     
-    # Petite note encourageante
-    st.info("💡 **Astuce :** Tu peux revenir à cette page à tout moment en sélectionnant 'À propos' dans le menu !")
+    💡 **Astuce :** Tu peux revenir à cette page à tout moment en sélectionnant 'À propos' dans le menu !
+    """)
 
 def render_quiz_module():
     st.header("🧩 Quiz habiletés sociales avec Complice")
@@ -352,7 +341,22 @@ def render_quiz_module():
             *Chaque quiz est une occasion d'apprendre !* 🌟
             """ )
 
-st.sidebar.title("🤗 Complice")
+# Titre de la sidebar avec mascotte
+sidebar_col1, sidebar_col2 = st.sidebar.columns([1, 3])
+
+with sidebar_col1:
+    # Affichage de la mascotte dans la sidebar
+    try:
+        st.image("./assets/mascotte_complice.png", width=50)
+    except:
+        try:
+            st.image("/home/jovyan/work/interface/assets/mascotte_complice.png", width=50)
+        except:
+            st.markdown("🤗")
+
+with sidebar_col2:
+    st.markdown("### Complice")
+
 # Ajouter un espace pour aligner avec le message d'accueil
 st.sidebar.markdown("<br>", unsafe_allow_html=True)
 
