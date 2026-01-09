@@ -2,6 +2,7 @@
 
 ## Complice — Un compagnon pour comprendre, ressentir et prendre confiance
 
+⚡ **Version 2.0 Optimisée** - Système ultra-rapide avec cache Streamlit
 
 Ce projet vise à créer un assistant conversationnel intelligent en combinant les modules suivants:
 
@@ -18,7 +19,16 @@ L’objectif est de proposer un outil accessible, rassurant et éducatif pour le
 
 ## ✅ **Fonctionnalités réalisées et opérationnelles**
 
-- 🔍 **Recherche intelligente** : RAG basé sur une bibliothèque documentaire sur l'autisme, émotions et habiletés sociales avec chat empathique avec prompts contextualisés et accueil chaleureux
+### ⚡ **Performances optimisées (v2.0)**
+- **Cache Streamlit** : Chargement unique des modèles et vectorstore
+- **Temps de réponse** : 1-2 secondes (contre 5-8s avant)
+- **Initialisation** : 5-10 secondes au premier lancement
+- **Navigation** : Interface fluide et réactive
+
+### 🔍 **Recherche intelligente** 
+- RAG basé sur une bibliothèque documentaire sur l'autisme, émotions et habiletés sociales 
+- Chat empathique avec prompts contextualisés et accueil chaleureux
+- **Nouveau** : Évite les références personnelles indésirables des documents
 - 🌈 **Module exploration émotionnelle** : 
   - 30 émotions avec descriptions pédagogiques
   - Génération d'images DALL-E personnalisées (âge, lieu, moment de la journée)

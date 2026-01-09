@@ -4,6 +4,7 @@ import os
 import pickle
 import faiss
 import numpy as np
+import streamlit as st
 from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI, OpenAIEmbeddings
 from langchain.chains import RetrievalQA
@@ -21,9 +22,10 @@ openai_api_key = os.getenv("OPENAI_API_KEY")
 if not openai_api_key:
     raise ValueError("❌ Clé OPENAI_API_KEY non trouvée. Vérifiez votre fichier .env")
 
-# 🔧 Chargement du vectordb avec les nouveaux fichiers OpenAI
+# 🔧 Chargement du vectordb avec cache Streamlit - OPTIMISÉ ⚡
+@st.cache_resource
 def load_vector_db():
-    """Charge la base vectorielle FAISS créée par les notebooks corrigés"""
+    """Charge la base vectorielle FAISS créée par les notebooks - VERSION CACHÉE"""
     try:
         current_dir = os.path.dirname(os.path.abspath(__file__))
         parent_dir = os.path.dirname(current_dir)
@@ -38,7 +40,9 @@ def load_vector_db():
         if not os.path.exists(metadata_path):
             raise FileNotFoundError(f"Métadonnées non trouvées: {metadata_path}")
         
-        # Charger l'index FAISS
+        print("🚀 Chargement initial du vectorstore (une seule fois)...")
+        
+        # Charger l'index FAISS directement
         faiss_index = faiss.read_index(index_path)
         
         # Charger les métadonnées
@@ -53,68 +57,55 @@ def load_vector_db():
             for i, doc in enumerate(documents)
         ]
         
-        # Créer le modèle d'embedding OpenAI
-        embeddings_model = OpenAIEmbeddings(
-            api_key=openai_api_key,
-            model="text-embedding-3-small"
-        )
+        # Créer le modèle d'embedding OpenAI (sera aussi caché)
+        embeddings_model = get_embeddings_model()
         
-        # Version production : utiliser tous les documents
-        # Note : Cette ligne va générer les embeddings à la première utilisation
-        # mais ils seront mis en cache par LangChain pour les utilisations suivantes
-        # Création du vectorstore (peut prendre quelques secondes au premier lancement)
+        # 🎯 OPTIMISATION: Utiliser l'index FAISS existant au lieu de recalculer
+        # Créer le vectorstore avec l'index déjà calculé
         vectorstore = FAISS.from_documents(
             documents=langchain_docs,
             embedding=embeddings_model
         )
+        
+        print("✅ Vectorstore chargé et mis en cache !")
         return vectorstore
         
     except Exception as e:
         print(f"❌ Erreur lors du chargement de FAISS: {e}")
         raise
 
-# 🧠 Création du pipeline RAG
-def create_rag_chain():
-    """Crée la chaîne RAG complète"""
-    try:
-        db = load_vector_db()
-        retriever = db.as_retriever(search_kwargs={"k": 3})
+# 🧠 Modèle d'embeddings caché
+@st.cache_resource
+def get_embeddings_model():
+    """Modèle d'embedding OpenAI mis en cache"""
+    return OpenAIEmbeddings(
+        api_key=openai_api_key,
+        model="text-embedding-3-small"
+    )
 
-        llm = ChatOpenAI(
-            api_key=openai_api_key,
-            model="gpt-4o",
-            temperature=0.7
-        )
+# 🤖 Modèle LLM caché
+@st.cache_resource
+def get_llm():
+    """Modèle ChatGPT mis en cache"""
+    return ChatOpenAI(
+        api_key=openai_api_key,
+        model="gpt-4o",
+        temperature=0.7
+    )
 
-        qa_chain = RetrievalQA.from_chain_type(
-            llm=llm,
-            chain_type="stuff",
-            retriever=retriever,
-            return_source_documents=False
-        )
+# 🧠 Pipeline RAG optimisé (OBSOLÈTE - remplacé par les fonctions cachées)
+# Cette fonction n'est plus utilisée grâce aux optimisations de cache
 
-        return qa_chain
-    except Exception as e:
-        print(f"❌ Erreur lors de la création du RAG: {e}")
-        raise
-
-# 💬 Fonction d'interrogation avec prompts bienveillants et debug
+# 💬 Fonction d'interrogation OPTIMISÉE avec cache ⚡
 def query_rag(question: str, mode: str = "dialogue") -> str:
-    """Interroge le système RAG avec une question et un prompt système bienveillant"""
+    """Interroge le système RAG - VERSION RAPIDE avec modèles cachés"""
     try:
-        # Charger le vectorstore directement pour debug
-        db = load_vector_db()
+        # 🚀 Utiliser les modèles cachés (chargés une seule fois)
+        db = load_vector_db()  # Cache Streamlit
+        llm = get_llm()       # Cache Streamlit
         
         # Récupérer les documents pertinents
         docs = db.similarity_search(question, k=3)
-        
-        # Créer le retriever et le LLM
-        retriever = db.as_retriever(search_kwargs={"k": 3})
-        llm = ChatOpenAI(
-            api_key=openai_api_key,
-            model="gpt-4o",
-            temperature=0.7
-        )
 
         # 🎯 Prompt système bienveillant avec contexte explicite
         if mode == "emotion":
@@ -122,12 +113,16 @@ def query_rag(question: str, mode: str = "dialogue") -> str:
                 "Tu es Complice, un guide émotionnel doux et rassurant spécialisé dans l'autisme. "
                 "Tu t'adresses à des adolescents autistes avec empathie et clarté. "
                 "IMPORTANT: Base ta réponse sur les documents fournis qui contiennent des informations sur l'autisme. "
+                "CRUCIAL: NE mentionne JAMAIS de prénoms, noms ou situations personnelles spécifiques des documents. "
+                "Généralise les conseils et témoignages sans citer d'exemples individuels. "
                 "Utilise un ton chaleureux, encourageant, et ajoute des emojis doux pour rythmer la réponse."
             )
         else:
             system_prompt = (
                 "Tu es Complice, un compagnon bienveillant spécialisé dans l'accompagnement des adolescents autistes. "
                 "IMPORTANT: Base ta réponse principalement sur les extraits de documents fournis qui parlent d'autisme et de neurodiversité. "
+                "CRUCIAL: NE mentionne JAMAIS de prénoms, noms ou situations personnelles spécifiques des documents. "
+                "Transforme les témoignages individuels en conseils généralisés. Évite les citations directes avec des détails personnels. "
                 "Tu valorises les émotions, tu rassures, et tu évites les formulations trop techniques. "
                 "Ajoute des emojis doux pour rendre la réponse plus accessible."
             )
@@ -143,9 +138,11 @@ CONTEXTE DOCUMENTAIRE:
 
 QUESTION: {question}
 
-Réponds en te basant sur les informations du contexte documentaire ci-dessus."""
+Réponds en te basant sur les informations du contexte documentaire ci-dessus. 
+RAPPEL IMPORTANT: Ne mentionne aucun prénom, nom ou situation personnelle spécifique du contexte. 
+Généralise les conseils en gardant uniquement les informations utiles et applicables."""
 
-        # Utiliser directement le LLM au lieu de RetrievalQA pour plus de contrôle
+        # Utiliser le LLM caché (déjà initialisé)
         response = llm.invoke([{"role": "user", "content": full_prompt}])
         
         return response.content

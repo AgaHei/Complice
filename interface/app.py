@@ -1,9 +1,29 @@
-﻿import streamlit as st
+﻿import streamlit as st 
 from rag_module import query_rag
 from image_module import generate_emotion_image
 from quiz_module import get_quiz_manager
 
-st.set_page_config(page_title="Complice", page_icon="", layout="wide")
+# 🚀 OPTIMISATIONS PERFORMANCE
+@st.cache_resource
+def get_quiz_manager_cached():
+    """Version cachée du gestionnaire de quiz"""
+    return get_quiz_manager()
+
+st.set_page_config(page_title="Complice", page_icon="🤗", layout="wide")
+
+# 🚀 Initialisation optimisée des ressources lourdes
+if 'app_initialized' not in st.session_state:
+    with st.spinner('🚀 Chargement initial de Complice... (quelques secondes la première fois)'):
+        # Pré-charger les ressources lourdes
+        try:
+            from rag_module import load_vector_db, get_llm
+            load_vector_db()  # Cache Streamlit
+            get_llm()        # Cache Streamlit
+            st.session_state.app_initialized = True
+            st.success('✅ Complice est prêt ! Toutes les prochaines interactions seront rapides.')
+        except Exception as e:
+            st.error(f'❌ Erreur lors de l\'initialisation: {e}')
+            st.info('💡 Vérifiez votre fichier .env et votre clé OpenAI')
 
 def render_dialogue_module():
     st.header("💬 Discuter avec Complice")
@@ -224,9 +244,9 @@ def render_quiz_module():
     et à développer tes compétences relationnelles. 🤗
     """)
     
-    # Initialiser le gestionnaire de quiz
+    # Initialiser le gestionnaire de quiz (VERSION CACHÉE)
     if 'quiz_manager' not in st.session_state:
-        st.session_state.quiz_manager = get_quiz_manager()
+        st.session_state.quiz_manager = get_quiz_manager_cached()
     
     if 'current_quiz' not in st.session_state:
         st.session_state.current_quiz = None
