@@ -1,6 +1,6 @@
 # 🚀 Guide d'utilisation rapide - Complice
 
-## 👦 Pour votre fils
+## 👦 Pour le jeune utilisateur
 
 ### Lancer l'application
 1. **Double-cliquez sur "🚀 Complice"** sur le Bureau
